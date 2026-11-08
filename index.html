@@ -4,231 +4,172 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nishant Roy</title>
-  <meta name="description" content="Nishant Roy leads engineering for performance ad formats at Pinterest and builds small, private tools after hours: a latte art coach, a recipe app, a poker table for friends, and a bedtime phone lockbox.">
+  <meta name="description" content="Engineering manager at Pinterest. I make things: a recipe app, a poker table for friends, a latte art coach, and a bedtime phone lockbox.">
   <meta name="color-scheme" content="light dark">
   <meta property="og:title" content="Nishant Roy">
-  <meta property="og:description" content="Engineering leader at Pinterest. After hours: latte art, recipes, poker night, and going to sleep on time.">
+  <meta property="og:description" content="Engineering manager at Pinterest. I make things.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%231B2422'/%3E%3Cpath d='M16 7v9l6 4' stroke='%23F0F1ED' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23002FA7'/%3E%3Cpath d='M9 23V9h2.6l7.8 9.6V9H22v14h-2.6l-7.8-9.6V23z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#work">Skip to content</a>
+  <a class="skip" href="#projects">Skip to projects</a>
 
-  <header class="masthead">
-    <a class="wordmark" href="#top">Nishant Roy</a>
+  <header class="top">
+    <a class="name" href="#">Nishant Roy</a>
     <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
       <a href="#work">Work</a>
-      <a href="#after-hours">After hours</a>
-      <a href="#talks">Talks and writing</a>
+      <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="intro">
-      <h1>Nishant Roy</h1>
-      <div class="intro-text">
-        <p>I run the engineering org behind Pinterest's performance ad formats: about thirty engineers building the products advertisers buy when they want sales, not just views. Before that I spent six years inside the ads serving platform, first as an engineer and tech lead, then as its manager through a two-year rewrite that shipped with zero downtime.</p>
-        <p>After hours I build small, private tools for the parts of a day I care about: a better latte, dinner, poker night with friends, and actually going to sleep. They all run on the device, keep no accounts, and exist because I wanted to use them.</p>
-        <p class="intro-meta">San Francisco. <a href="mailto:roynishant96@gmail.com">Email</a>, <a href="https://www.linkedin.com/in/nishantroy/">LinkedIn</a>, <a href="https://github.com/nishantroy">GitHub</a>, <a href="https://medium.com/@roynishant96">Medium</a>.</p>
-      </div>
+  <main>
+    <section class="hero">
+      <h1>Engineering manager at&nbsp;Pinterest.<br>I make things.</h1>
+      <p class="lede">I run the org behind Pinterest's performance ad formats, and I spend my evenings building apps I actually use. Four of them are below.</p>
+      <p class="links">
+        <a href="mailto:roynishant96@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/nishantroy/">LinkedIn</a>
+        <a href="https://github.com/nishantroy">GitHub</a>
+      </p>
     </section>
 
-    <section id="work" class="work">
-      <h2>Work</h2>
-      <p class="section-lede">Eight years at Pinterest, from the serving path to the product surface. The ads business is now more than four billion dollars a year.</p>
+    <section id="projects" class="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
 
+      <article class="project" data-project="mise">
+        <div class="shots">
+          <figure class="phone">
+            <img src="assets/mise/1.webp" alt="Mise home: Good evening, an ask bar for what can I cook, and recipe photo cards" width="780" height="1688" loading="lazy" decoding="async">
+          </figure>
+          <div class="screens" role="tablist" aria-label="Mise screens"></div>
+        </div>
+        <div class="about">
+          <h3>Mise</h3>
+          <p class="one">Recipes that know what's in your kitchen.</p>
+          <ul>
+            <li>Share a link from Safari. It flags what you're missing and suggests swaps from your pantry.</li>
+            <li>Tell it what you changed after cooking and the recipe updates itself.</li>
+            <li>Runs entirely on the phone with Apple's on-device models. No account, no backend.</li>
+          </ul>
+          <p class="meta">iOS, SwiftUI</p>
+        </div>
+      </article>
+
+      <article class="project" data-project="poker">
+        <div class="shots">
+          <figure class="phone">
+            <img src="assets/poker/1.webp" alt="Bink City table mid-hand: flop dealt, pot of 300, your hole cards and Fold, Call, Raise buttons" width="780" height="1688" loading="lazy" decoding="async">
+          </figure>
+          <div class="screens" role="tablist" aria-label="Bink City screens"></div>
+        </div>
+        <div class="about">
+          <h3>Bink City</h3>
+          <p class="one">Poker night for six to eight friends, on your phones.</p>
+          <ul>
+            <li>Hold'em, Omaha, Pineapple, short deck, dealer's choice. Hand replays with equities, a HUD, and a ghost player.</li>
+            <li>Real-time over WebSockets on Cloudflare Workers and Durable Objects, inside the free tier.</li>
+            <li>A pure TypeScript engine with its own hand evaluator, fully unit tested.</li>
+          </ul>
+          <p class="meta">Web, TypeScript, React. <a href="https://github.com/nishantroy/poker">Source on GitHub</a></p>
+        </div>
+      </article>
+
+      <article class="project" data-project="latte">
+        <div class="shots">
+          <figure class="phone">
+            <img src="assets/latte/1.webp" alt="A tulip pour photographed from above with the measured foam outlined, scored 84 out of 100" width="780" height="1688" loading="lazy" decoding="async">
+          </figure>
+          <div class="screens" role="tablist" aria-label="Latte Art Coach screens"></div>
+        </div>
+        <div class="about">
+          <h3>Latte Art Coach</h3>
+          <p class="one">Scores your latte art and tells you what to fix.</p>
+          <ul>
+            <li>Photograph the cup. Get a score out of 100, an overlay of what it measured, and two things to change next pour.</li>
+            <li>The score is pure geometry and deterministic. On-device AI only writes the coaching.</li>
+            <li>Scores a pour in a few hundred milliseconds, with Accelerate and Core Image doing the heavy lifting.</li>
+          </ul>
+          <p class="meta">iOS, SwiftUI</p>
+        </div>
+      </article>
+
+      <article class="project" data-project="lockbox">
+        <div class="shots">
+          <figure class="phone">
+            <img src="assets/lockbox/1.webp" alt="Phone Lockbox home: Lock now button and tonight's bedtime lock set from 10:30 PM to 7:00 AM" width="780" height="1688" loading="lazy" decoding="async">
+          </figure>
+          <div class="screens" role="tablist" aria-label="Phone Lockbox screens"></div>
+        </div>
+        <div class="about">
+          <h3>Phone Lockbox</h3>
+          <p class="one">Locks the phone down at bedtime. Keeps the essentials.</p>
+          <ul>
+            <li>Shields everything except the few apps you picked. No snooze button.</li>
+            <li>Built on Apple's Screen Time frameworks, with a trusted friend who can let you out.</li>
+            <li>Local-only, no account, no analytics. Honest about what a self-control app can and can't do.</li>
+          </ul>
+          <p class="meta">iOS, SwiftUI</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-h">
+      <h2 id="work-h">Work</h2>
       <ol class="roles">
-        <li class="role is-current">
-          <div class="when"><time datetime="2024-08">Aug 2024</time> to now</div>
-          <div class="what">
-            <h3>Senior Engineering Manager, Performance Ad Formats</h3>
-            <p>Lead a 30-person engineering org responsible for the ad formats that drive lower-funnel outcomes.</p>
-            <ul>
-              <li>Shipped Promotions, Creative Overlays, Where-To-Buy, In-App Shopping and Max-Width Collections, together worth more than $300M in annualized revenue.</li>
-              <li>Launched Off Ramps, a post-click discovery surface that turns an ad tap into high-intent shopping refinement, adding quality clicks without costing Pinner engagement.</li>
-              <li>Improved conversion outcomes with generative creative enhancements, per-user format personalization and grid-layout optimization.</li>
-            </ul>
-          </div>
+        <li>
+          <span class="dates">2024 to now</span>
+          <span class="role">Senior Engineering Manager, Performance Ad Formats, Pinterest</span>
+          <span class="note">A 30-person org. Shipped products worth over $300M a year.</span>
         </li>
-
-        <li class="role">
-          <div class="when"><time datetime="2021-02">Feb 2021</time> to <time datetime="2024-08">Aug 2024</time></div>
-          <div class="what">
-            <h3>Engineering Manager, Ads Serving Platform</h3>
-            <p>Managed 15+ engineers on the highest-scale recommendation system at the company.</p>
-            <ul>
-              <li>Led the two-year rewrite of the ads serving platform that launched with zero downtime, reorganized around modular execution, safer data models and stronger validation. The story is written up in two Pinterest Engineering posts below.</li>
-              <li>Opened more than $100M a year in new revenue through third-party demand integrations with Amazon and Google and new products such as Premiere Spotlight.</li>
-              <li>Served on the Go Enterprise Advisory Board from 2022 to 2024, advising on enterprise Go adoption, developer experience and the language's evolution.</li>
-            </ul>
-          </div>
+        <li>
+          <span class="dates">2021 to 2024</span>
+          <span class="role">Engineering Manager, Ads Serving Platform, Pinterest</span>
+          <span class="note">Led a two-year rewrite of the ads serving system. Zero downtime.</span>
         </li>
-
-        <li class="role">
-          <div class="when"><time datetime="2018-02">Feb 2018</time> to <time datetime="2021-02">Feb 2021</time></div>
-          <div class="what">
-            <h3>Software Engineer, then Tech Lead, Ads Serving</h3>
-            <p>Redesigned the core serving architecture and the tooling around it.</p>
-            <ul>
-              <li>Enabled 100x growth in the ad corpus and cut $10M in cost by rethinking how candidates are indexed and retrieved.</li>
-              <li>Reduced bad deploys by 30% and raised engineering velocity by 75% with release-safety tooling, pre-submit integration tests and CI/CD infrastructure.</li>
-            </ul>
-          </div>
+        <li>
+          <span class="dates">2018 to 2021</span>
+          <span class="role">Software Engineer and Tech Lead, Ads Serving, Pinterest</span>
+          <span class="note">Grew the ad corpus 100x. Cut bad deploys by a third.</span>
         </li>
-
-        <li class="role">
-          <div class="when"><time datetime="2017-12">Dec 2017</time></div>
-          <div class="what">
-            <h3>Georgia Institute of Technology</h3>
-            <p>BS in Computer Science, Atlanta.</p>
-          </div>
+        <li>
+          <span class="dates">2017</span>
+          <span class="role">BS Computer Science, Georgia Tech</span>
+          <span class="note"></span>
         </li>
       </ol>
+      <p class="more">Details on <a href="https://www.linkedin.com/in/nishantroy/">LinkedIn</a>.</p>
     </section>
 
-    <section id="after-hours" class="after-hours">
-      <div class="after-hours-head">
-        <h2>After hours</h2>
-        <p class="section-lede">Four things I built for myself, in the order a day uses them. Each one is a native app or a tiny hosted service, written to be finished rather than launched.</p>
-      </div>
-
-      <article class="band band-morning" aria-labelledby="latte">
-        <div class="band-inner">
-          <div class="hour">7:30 in the morning</div>
-          <div class="project">
-            <h3 id="latte">Latte Art Coach</h3>
-            <p class="tagline">Photograph the pour, get a score and two things to change next time.</p>
-            <p>A native iPhone app. Pick the pattern you poured, heart, tulip or rosetta, take a photo from above, and in under 300 milliseconds you get a score out of 100, an overlay of what it measured, and specific coaching. While you frame the shot, the foam outline updates live and the app nudges you closer, more centered, or flatter.</p>
-            <ul class="details">
-              <li>The score comes only from measured geometry: centering, symmetry, contrast, proportion, texture, and how well the pattern is defined. It is deterministic and repeatable.</li>
-              <li>Apple's on-device Foundation Models write the coaching from those measurements and your pour history. They never produce or adjust the score, and rule-based tips take over when Apple Intelligence is unavailable.</li>
-              <li>Image math runs on Accelerate and Core Image rather than per-pixel Swift. The analysis package has no UI dependencies and its tests run on the Mac against real and synthetic pours.</li>
-              <li>Every scored pour is saved with its photo, your own rating, and trends per pattern. A Beans tab reads bag labels and keeps dial-in notes.</li>
-            </ul>
-            <p class="stack">SwiftUI, Swift Package, Accelerate, Core Image, Foundation Models, SwiftData. Everything stays on the phone.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="band band-dusk" aria-labelledby="mise">
-        <div class="band-inner">
-          <div class="hour">6:30 in the evening</div>
-          <div class="project">
-            <h3 id="mise">Mise</h3>
-            <p class="tagline">A recipe app that knows what is in your kitchen.</p>
-            <p>Share a recipe to Mise from Safari or paste a link. It flags the ingredients you might not have, remembers your answers in a pantry, and suggests swaps that use what you already own. After you cook, tell it what you changed and it updates the recipe for next time. Cook mode runs timers as a Live Activity so they survive a locked phone.</p>
-            <ul class="details">
-              <li>All the logic lives in a plain Swift package: recipe parsing, an ingredient catalog, substitution rules, and the feedback rules that rewrite a recipe from what you said. It is tested with a fast command-line suite, no simulator needed.</li>
-              <li>On-device Foundation Models make the conversation natural where available. Without them, the built-in rules do the same job more plainly.</li>
-              <li>UI tests never touch the network. They launch the app with fixtures served through a stub fetcher, so import, ingredient checks and the share queue are covered end to end.</li>
-            </ul>
-            <p class="stack">SwiftUI, SwiftData, a Safari share extension, AlarmKit Live Activities. No accounts, no backend, no analytics.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="band band-night" aria-labelledby="poker">
-        <div class="band-inner">
-          <div class="hour">9 at night</div>
-          <div class="project">
-            <h3 id="poker">Bink City</h3>
-            <p class="tagline">A poker table for six to eight friends, hosted for free.</p>
-            <p>Join by link, play in real time on your phone, and keep lifetime stats. It deals No-Limit Hold'em, Pot-Limit Omaha with four, five or six cards, Pineapple, Omaha Hi-Lo, Irish Hi-Lo, short deck and dealer's choice, and the host can switch games between hands. The whole thing runs inside the Cloudflare Workers free plan, with a budget table in the README to prove it.</p>
-            <ul class="details">
-              <li>A pure TypeScript game engine with its own hand evaluator, side pots, split pots and run-it-twice. It touches no platform APIs, so it is unit tested outright.</li>
-              <li>Two SQLite-backed Durable Objects: one per table holding authoritative state and fanning out over hibernating WebSockets, and one global object for accounts, sessions and the leaderboard. Every timer is a Durable Object alarm, so the table sleeps between actions.</li>
-              <li>Each socket gets its own view of the state, so hole cards reach only their owner until showdown. The end-to-end smoke test asserts it.</li>
-              <li>Per-player HUD stats, hand replays with street-by-street equities computed in a Web Worker, rabbit hunting, a ghost player, multi-board Squid Game hands and a full-screen bad-beat moment. A deploy guard refuses to ship while a game is live.</li>
-            </ul>
-            <p class="stack">Cloudflare Workers, Durable Objects, React, Vite, Tailwind, Vitest. <a href="https://github.com/nishantroy/poker">Source on GitHub</a>.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="band band-midnight" aria-labelledby="lockbox">
-        <div class="band-inner">
-          <div class="hour">11:30 at night</div>
-          <div class="project">
-            <h3 id="lockbox">Phone Lockbox</h3>
-            <p class="tagline">Keep the essentials, lose the late-night app loop.</p>
-            <p>An iPhone app for one problem: cycling through social apps, video and work in bed. At bedtime it shields everything except a short list of essentials you chose earlier, and the schedule is hard to relax on impulse. There is no snooze button. It is a self-control tool, and the docs say so plainly: Screen Time authorization can be revoked and the app can be deleted, so it does not claim to be tamper-proof.</p>
-            <ul class="details">
-              <li>Built on Apple's FamilyControls, ManagedSettings and DeviceActivity frameworks, with monitor and shield extensions doing the enforcement so the app itself does not need to be open.</li>
-              <li>Pending edits apply at the next release rather than immediately, delayed recovery covers the real emergency, and overnight releases have been tested on a device across several builds.</li>
-              <li>Calm by design: no streaks, rewards, guilt or feeds. Local-only configuration with no account or analytics SDK.</li>
-            </ul>
-            <p class="stack">SwiftUI, FamilyControls, ManagedSettings, DeviceActivity, App Intents. Currently in device QA on its fifth build.</p>
-          </div>
-        </div>
-      </article>
+    <section id="writing" class="writing" aria-labelledby="writing-h">
+      <h2 id="writing-h">Talks and writing</h2>
+      <ul class="pubs">
+        <li><a href="https://changelog.com/gotime/257">How Pinterest delivers software at scale</a> <span>Go Time podcast, 2022</span></li>
+        <li><a href="https://medium.com/pinterest-engineering/redesigning-pinterests-ad-serving-systems-with-zero-downtime-part-2-3e607bbba9f0">Redesigning Pinterest's ad serving systems with zero downtime</a> <span>Pinterest Engineering, 2024</span></li>
+        <li><a href="https://www.usenix.org/conference/srecon20americas/presentation/roy">Heap optimization for Go systems</a> <span>SREcon20 Americas</span></li>
+        <li><a href="https://conf42.com/Incident_Management_2022_Nishant_Roy_incident_management">Running an effective incident management process</a> <span>Conf42, 2022</span></li>
+        <li><a href="https://medium.com/pinterest-engineering/how-we-scaled-the-size-of-pinterests-ad-corpus-by-60x-d6d5bfa6bf16">How we scaled Pinterest's ad corpus by 60x</a> <span>Pinterest Engineering, 2021</span></li>
+        <li><a href="https://medium.com/better-programming/preventing-cascading-failure-in-distributed-systems-6c6b1aad6166">Preventing cascading failures in distributed systems</a> <span>Better Programming, 2020</span></li>
+      </ul>
+      <p class="more">More on <a href="https://medium.com/@roynishant96">Medium</a>.</p>
     </section>
 
-    <section id="talks" class="talks">
-      <h2>Talks and writing</h2>
-      <p class="section-lede">Mostly about Go, memory, and keeping a high-traffic system shippable.</p>
-
-      <ol class="pubs">
-        <li>
-          <div class="when">2024</div>
-          <div class="what"><a href="https://medium.com/pinterest-engineering/redesigning-pinterests-ad-serving-systems-with-zero-downtime-part-2-3e607bbba9f0">Redesigning Pinterest's ad serving systems with zero downtime, part two</a><span class="venue">Pinterest Engineering, co-author</span></div>
-        </li>
-        <li>
-          <div class="when">2024</div>
-          <div class="what"><span class="unlinked">Redesigning Pinterest's ad serving systems with zero downtime, part one</span><span class="venue">Pinterest Engineering, co-author</span></div>
-        </li>
-        <li>
-          <div class="when">2023</div>
-          <div class="what"><a href="https://www.conf42.com/Golang_2023_Nishant_Roy_heap_optimizations">Heap optimizations for Go systems</a><span class="venue">Conf42 Golang, talk</span></div>
-        </li>
-        <li>
-          <div class="when">2022</div>
-          <div class="what"><a href="https://changelog.com/gotime/257">How Pinterest delivers software at scale</a><span class="venue">Go Time podcast, episode 257</span></div>
-        </li>
-        <li>
-          <div class="when">2022</div>
-          <div class="what"><a href="https://conf42.com/Incident_Management_2022_Nishant_Roy_incident_management">Running an effective incident management process</a><span class="venue">Conf42 Incident Management, talk</span></div>
-        </li>
-        <li>
-          <div class="when">2022</div>
-          <div class="what"><a href="https://medium.com/pinterest-engineering/debugging-ad-delivery-at-pinterest-8b7b1f562afc">Debugging ad delivery at Pinterest</a><span class="venue">Pinterest Engineering</span></div>
-        </li>
-        <li>
-          <div class="when">2021</div>
-          <div class="what"><a href="https://medium.com/pinterest-engineering/how-we-scaled-the-size-of-pinterests-ad-corpus-by-60x-d6d5bfa6bf16">How we scaled the size of Pinterest's ad corpus by 60x</a><span class="venue">Pinterest Engineering</span></div>
-        </li>
-        <li>
-          <div class="when">2021</div>
-          <div class="what"><a href="https://medium.com/pinterest-engineering/pre-submit-integration-tests-for-ads-serving-a07b5a12ea3f">Pre-submit integration tests for ads serving</a><span class="venue">Pinterest Engineering</span></div>
-        </li>
-        <li>
-          <div class="when">2020</div>
-          <div class="what"><a href="https://www.usenix.org/conference/srecon20americas/presentation/roy">Heap optimization for Go systems</a><span class="venue">SREcon20 Americas, talk</span></div>
-        </li>
-        <li>
-          <div class="when">2020</div>
-          <div class="what"><a href="https://medium.com/swlh/memory-optimizations-for-go-systems-48d95cf64a13">Heap optimizations for Go systems</a><span class="venue">The Startup, on Medium</span></div>
-        </li>
-        <li>
-          <div class="when">2020</div>
-          <div class="what"><a href="https://medium.com/better-programming/preventing-cascading-failure-in-distributed-systems-6c6b1aad6166">Preventing cascading failures in distributed systems</a><span class="venue">Better Programming, on Medium</span></div>
-        </li>
-      </ol>
-      <p class="talks-note">I have also given invited talks at more than ten companies on infrastructure scaling, Go performance and incident management.</p>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Say hello</h2>
-      <p>I am happy to talk about ads infrastructure, engineering management, Go, or any of the apps above. The quickest way to reach me is <a href="mailto:roynishant96@gmail.com">roynishant96@gmail.com</a>. I am also on <a href="https://www.linkedin.com/in/nishantroy/">LinkedIn</a>, <a href="https://github.com/nishantroy">GitHub</a> and <a href="https://medium.com/@roynishant96">Medium</a>.</p>
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Say hi</h2>
+      <p>Working on something interesting? <a href="mailto:roynishant96@gmail.com">roynishant96@gmail.com</a></p>
     </section>
   </main>
 
-  <footer class="colophon">
-    <p>Set in Literata and Hanken Grotesk. No trackers, no cookies.</p>
+  <footer class="foot">
+    <span>Nishant Roy</span>
+    <span>San Francisco</span>
   </footer>
+
+  <script src="site.js" defer></script>
 </body>
 </html>
