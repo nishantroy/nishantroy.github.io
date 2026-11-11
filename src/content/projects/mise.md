@@ -7,7 +7,7 @@ tint: "#efe6d6"
 platform: iPhone
 stack: [SwiftUI, Foundation Models, SwiftData]
 status: TestFlight
-# repo: https://github.com/nishantroy/mise  # TODO: uncomment once public
+repo: https://github.com/nishantroy/mise
 screenshot: ../../assets/projects/mise/1.webp
 screenshotAlt: "Mise home screen: a greeting, an ask bar for what to cook, and recipe cards with photos"
 ---

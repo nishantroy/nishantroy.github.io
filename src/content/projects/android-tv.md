@@ -8,7 +8,7 @@ stack: [Java, Android, adb]
 status: Personal use
 tint: "#16242c"
 frame: tv
-# repo: https://github.com/nishantroy/android-tv-tuneup  # TODO: uncomment once public
+repo: https://github.com/nishantroy/android-tv-tuneup
 screenshot: ../../assets/projects/android-tv/home.png
 screenshotAlt: "A custom Android TV home screen: a carousel of streaming apps with Disney+ in focus and a Continue Watching row below"
 ---

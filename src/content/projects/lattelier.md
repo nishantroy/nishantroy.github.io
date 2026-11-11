@@ -7,7 +7,7 @@ tint: "#e9dccb"
 platform: iPhone
 stack: [SwiftUI, Core Image, Foundation Models]
 status: TestFlight
-# repo: https://github.com/nishantroy/latte-art-coach  # TODO: uncomment once public
+repo: https://github.com/nishantroy/latte-art-coach
 screenshot: ../../assets/projects/lattelier/1.webp
 screenshotAlt: "Lattelier result: a tulip pour photographed from above, scored 84 out of 100, with coaching for the next pour"
 ---
