@@ -1,0 +1,98 @@
+# Add a talk or article by appending an entry. `featured: true` puts it on the home page.
+# kind: talk | podcast | article. date: YYYY or YYYY-MM.
+- id: zero-downtime-part-2
+  theme: ads-serving
+  title: "Redesigning Pinterest's ad serving systems with zero downtime, part 2"
+  kind: article
+  venue: Pinterest Engineering
+  date: "2024-08"
+  url: https://medium.com/pinterest-engineering/redesigning-pinterests-ad-serving-systems-with-zero-downtime-part-2-3e607bbba9f0
+  featured: true
+- id: zero-downtime-part-1
+  theme: ads-serving
+  title: "Redesigning Pinterest's ad serving systems with zero downtime, part 1"
+  kind: article
+  venue: Pinterest Engineering
+  date: "2024" # TODO: confirm month
+  url: https://medium.com/pinterest-engineering/redesigning-pinterests-ad-serving-systems-with-zero-downtime-3253d2432a0c
+  featured: true
+- id: go-time-257
+  theme: shipping
+  title: How Pinterest delivers software at scale
+  kind: podcast
+  venue: Go Time
+  date: "2022"
+  url: https://changelog.com/gotime/257
+  featured: true
+- id: conf42-incident-management
+  theme: shipping
+  title: Running an effective incident management process
+  kind: talk
+  venue: Conf42 Incident Management
+  date: "2023"
+  url: https://conf42.com/Incident_Management_2022_Nishant_Roy_incident_management
+  deliveries:
+    - venue: Conf42 Incident Management
+      year: "2022"
+      url: https://conf42.com/Incident_Management_2022_Nishant_Roy_incident_management
+      note: video
+    - venue: Eficode
+      year: "2023"
+      url: https://www.youtube.com/watch?v=Tvh9_JH4yCM
+      note: video
+  featured: true
+- id: debugging-ad-delivery
+  theme: ads-serving
+  title: Debugging ad delivery at Pinterest
+  kind: article
+  venue: Pinterest Engineering
+  date: "2022-06"
+  url: https://medium.com/pinterest-engineering/debugging-ad-delivery-at-pinterest-8b7b1f562afc
+- id: presubmit-tests
+  theme: shipping
+  title: Pre-submit integration tests for ads serving
+  kind: article
+  venue: Pinterest Engineering
+  date: "2020"
+  url: https://medium.com/pinterest-engineering/pre-submit-integration-tests-for-ads-serving-a07b5a12ea3f
+- id: ad-corpus-60x
+  theme: ads-serving
+  title: "How we scaled the size of Pinterest's ad corpus by 60x"
+  kind: article
+  venue: Pinterest Engineering · 60x as of 2021
+  date: "2021"
+  url: https://medium.com/pinterest-engineering/how-we-scaled-the-size-of-pinterests-ad-corpus-by-60x-d6d5bfa6bf16
+  featured: true
+- id: heap-talk
+  title: Heap optimizations for Go systems
+  kind: talk
+  theme: shipping
+  venue: SREcon20 Americas
+  date: "2023"
+  url: https://www.usenix.org/conference/srecon20americas/presentation/roy
+  featured: true
+  deliveries:
+    - venue: SREcon Americas
+      year: "2020"
+      url: https://www.usenix.org/conference/srecon20americas/presentation/roy
+    - venue: GoSF
+      year: "2022"
+      url: https://www.youtube.com/watch?v=lwOxQpLeWlw
+      note: video
+    - venue: Boston Go
+      year: "2022"
+      url: https://x.com/BostonGolang/status/1560119169756037120
+    - venue: Conf42 Golang
+      year: "2023"
+      url: https://www.conf42.com/Golang_2023_Nishant_Roy_heap_optimizations
+      note: video
+  also:
+    - label: The Startup, 2020
+      href: https://medium.com/swlh/memory-optimizations-for-go-systems-48d95cf64a13
+- id: cascading-failures
+  theme: shipping
+  title: Preventing cascading failures in distributed systems
+  kind: article
+  venue: Better Programming
+  date: "2020"
+  url: https://medium.com/better-programming/preventing-cascading-failure-in-distributed-systems-6c6b1aad6166

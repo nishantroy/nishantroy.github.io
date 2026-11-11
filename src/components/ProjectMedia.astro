@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props { src: ImageMetadata; alt: string; frame: 'phone' | 'browser' | 'tv' }
+const { src, alt, frame } = Astro.props;
+---
+{frame === 'tv' ? (
+  <div class="absolute inset-x-[7%] top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:-translate-y-[calc(50%+6px)] motion-reduce:transform-none">
+    <div class="rounded-lg bg-[#0b0b0b] p-[4px] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)]">
+      <Image src={src} alt={alt} widths={[400, 640, 900]} sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 86vw" class="w-full rounded-[5px]" />
+    </div>
+  </div>
+) : frame === 'phone' ? (
+  <div class="absolute left-1/2 top-8 w-[46%] -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transform-none">
+    <div class="rounded-[2rem] bg-[#111] p-[5px] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)]">
+      <Image src={src} alt={alt} widths={[240, 360, 520]} sizes="(min-width: 1024px) 180px, (min-width: 640px) 22vw, 46vw" class="w-full rounded-[1.7rem] bg-black" />
+    </div>
+  </div>
+) : (
+  <div class="absolute -right-6 -bottom-6 left-8 top-8 overflow-hidden rounded-tl-xl bg-raised shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)] ring-1 ring-black/10 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transform-none">
+    <div class="flex h-7 items-center gap-1.5 px-3" aria-hidden="true">
+      <span class="size-2 rounded-full bg-rule"></span><span class="size-2 rounded-full bg-rule"></span><span class="size-2 rounded-full bg-rule"></span>
+    </div>
+    <Image src={src} alt={alt} widths={[600, 900, 1200]} sizes="(min-width: 768px) 520px, 90vw" class="w-full" />
+  </div>
+)}

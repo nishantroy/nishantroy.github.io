@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { launch: CollectionEntry<'launches'> }
+const l = Astro.props.launch.data;
+---
+<article class="group flex h-full flex-col">
+  <a href={l.url ?? undefined} class="block rounded-2xl bg-raised p-2.5 ring-1 ring-rule transition-colors hover:ring-accent">
+    {l.image && (
+      <Image
+        src={l.image}
+        alt={l.imageAlt ?? ''}
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 768px) 50vw, 100vw"
+        style={`object-position:${l.imagePosition}`}
+        class:list={['launch-art aspect-[4/3] w-full rounded-xl object-cover', l.imageClass]}
+      />
+    )}
+  </a>
+  <h3 class="mt-5 font-serif text-2xl font-medium tracking-tight">{l.title}</h3>
+  <p class="mt-2 text-[0.9375rem] leading-relaxed text-soft">{l.description}</p>
+  {l.proof.length > 0 && (
+    <ul class="mt-2 flex flex-col gap-1 text-sm text-pretty text-soft">
+      {l.proof.map((p) => <li><a class="link-underline" href={p.url}>{p.text}</a></li>)}
+    </ul>
+  )}
+</article>

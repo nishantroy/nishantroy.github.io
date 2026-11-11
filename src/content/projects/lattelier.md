@@ -1,0 +1,14 @@
+---
+name: Lattelier
+tagline: A latte art coach in your camera.
+hook: "Scores the pour with deterministic geometry; an on-device model only writes the coaching."
+order: 2
+tint: "#e9dccb"
+platform: iPhone
+stack: [SwiftUI, Core Image, Foundation Models]
+status: TestFlight
+# repo: https://github.com/nishantroy/latte-art-coach  # TODO: uncomment once public
+screenshot: ../../assets/projects/lattelier/1.webp
+screenshotAlt: "Lattelier result: a tulip pour photographed from above, scored 84 out of 100, with coaching for the next pour"
+---
+Full name: Lattelier: Espresso Coach. Finds the cup, segments the foam, measures the pattern and scores it deterministically; an on-device model only writes the coaching.

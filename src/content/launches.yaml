@@ -1,0 +1,84 @@
+# Public launches shown in "Shipped at Pinterest". `featured: true` = large card; others are text links.
+# Add `image: ../assets/launches/<file>` + `imageAlt` to replace the typographic tile with a product shot.
+- id: performance-plus-creative
+  title: Performance+ creative
+  description: "Turns product Pins into collections and shopping ads automatically, resizes images and generates AI backgrounds, then serves the best-performing version."
+  role: Pinterest · 2024–26
+  url: https://help.pinterest.com/en/business/article/pinterest-performance-plus-creative
+  image: ../assets/launches/performance-plus-creative.jpg
+  imageAlt: "One product ad shown with several AI-generated backgrounds, labelled Pinterest Performance+"
+  imageSource: https://newsroom.pinterest.com/news/cannes-2026/
+  proof:
+    - text: "Image resizing: +6% CTR in early tests (Q1 '25 call)"
+      url: https://s204.q4cdn.com/369458543/files/doc_earnings/2025/q1/transcript/Q1-2025-Transcript.pdf
+    - text: "Smart Assembly: +6% avg. CTR (Q2 '26 call)"
+      url: https://s204.q4cdn.com/369458543/files/doc_earnings/2026/q2/transcript/Q2-2026-Transcript.pdf
+  order: 1
+- id: premiere-spotlight
+  title: Premiere Spotlight
+  description: "Launched as Pinterest's highest-impact awareness format: wide-screen video across about half the mobile screen on search or the home feed, on a guaranteed date."
+  role: Pinterest · 2023
+  url: https://business.pinterest.com/blog/new-products-premiere-spotlight-travel-catalogs/
+  image: ../assets/launches/premiere-spotlight-v3.jpg
+  imageAlt: "A Premiere Spotlight takeover for a home decor brand filling the top half of the Pinterest search page"
+  imageSource: https://business.pinterest.com/blog/make-a-splash-with-premiere-spotlight-takeovers/
+  imagePosition: 50% 0%
+  proof:
+    - text: 51% average MRC video view rate (2023 launch post)
+      url: https://business.pinterest.com/blog/new-products-premiere-spotlight-travel-catalogs/
+    - text: "3.6x higher action intent, home + search vs. search only (2025)"
+      url: https://business.pinterest.com/blog/make-a-splash-with-premiere-spotlight-takeovers/
+  order: 2
+- id: visual-search-ads
+  title: Visual search ads
+  description: "Every Pin closeup is a visual search. These ads show a relevant product in that moment, so the Pinner can act on what they're looking at."
+  role: Pinterest · 2024–26
+  url: https://newsroom.pinterest.com/news/new-pinterest-visual-search-performance-ads/
+  image: ../assets/launches/visual-search-ads-v5.png
+  imageAlt: "A Pin closeup of a handbag in the Pinterest app, with an ad for a similar bag shown above the closeup"
+  imagePosition: 50% 0%
+  imageSource: https://newsroom.pinterest.com/news/new-pinterest-visual-search-performance-ads/
+  proof:
+    - text: Highlighted on the Q3 2026 earnings call
+      url: https://s204.q4cdn.com/369458543/files/doc_earnings/2026/q3/transcript/Q3-2026-Transcript.pdf
+  order: 3
+- id: third-party-ads
+  title: Third-party ads
+  description: Serving infrastructure for Pinterest's first third-party ad demand, from Amazon and Google. Pinterest now works with DSPs covering two-thirds of the DSP market.
+  role: Pinterest · 2021–24
+  proof:
+    - text: Q3 '26 earnings call
+      url: https://s204.q4cdn.com/369458543/files/doc_earnings/2026/q3/transcript/Q3-2026-Transcript.pdf
+  url: https://newsroom.pinterest.com/news/pinterest-announces-partnership-with-amazon-to-bring-third-party-ad-demand-to-the-platform/
+  featured: false
+  order: 5
+- id: promotions
+  title: Promotions and deals
+  description: "Time-bound offers on ads, surfaced in a personalized Deals board, a swipeable “Offers for you” carousel in the home feed, and a Deal badge in the grid."
+  role: Pinterest · 2024–26
+  url: https://help.pinterest.com/en/business/article/promotions
+  image: ../assets/launches/promotions-v4.png
+  imageAlt: "Three Pinterest app screens: a Deals board, an Offers for you carousel of deal ads, and a product Pin with a Deal badge"
+  imagePosition: 50% 0%
+  order: 4
+- id: creative-overlays
+  title: Creative Overlays
+  description: "A logo, text or shape layered on a shopping ad's image for seasonal moments, promotions or branding, without changing the catalog image."
+  role: Pinterest · 2024–26
+  url: https://help.pinterest.com/en/business/article/creative-overlays
+  order: 6
+  featured: false
+- id: where-to-buy
+  title: Where-to-Buy links
+  description: "Links on standard ads to the retailers that carry a product, so Pinners can buy from a retailer they already use."
+  role: Pinterest · 2024–26
+  url: https://help.pinterest.com/en/business/article/where-to-buy-links
+  order: 7
+  featured: false
+- id: amazon-in-app-shopping
+  title: In-app shopping with Amazon
+  description: Pinners buy Amazon products without leaving Pinterest.
+  role: Pinterest · 2024–26
+  url: https://www.engadget.com/apps/tiktok-and-pinterest-team-up-with-amazon-for-in-app-shopping-140004136.html
+  order: 8
+  featured: false

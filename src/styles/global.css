@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+/* Palettes. The site uses the one set in profile.palette; ?palette=name previews another. */
+:root[data-palette="cobalt"] {
+  --paper: #f8f9fb; --paper-raised: #ffffff; --ink: #0b1220; --ink-soft: #4a5263;
+  --ink-faint: #6b7385; --rule: #e3e6ec; --accent: #2f55e4; --accent-soft: #e8edfd;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="cobalt"]:not([data-theme="light"]) {
+  --paper: #0b0e14; --paper-raised: #121620; --ink: #e8ebf1; --ink-soft: #a7aebb;
+  --ink-faint: #7d8596; --rule: #232835; --accent: #86a0ff; --accent-soft: #18203a;
+  color-scheme: dark;
+}
+}
+:root[data-palette="cobalt"][data-theme="dark"] {
+  --paper: #0b0e14; --paper-raised: #121620; --ink: #e8ebf1; --ink-soft: #a7aebb;
+  --ink-faint: #7d8596; --rule: #232835; --accent: #86a0ff; --accent-soft: #18203a;
+  color-scheme: dark;
+}
+:root[data-palette="ember"] {
+  --paper: #fafaf8; --paper-raised: #ffffff; --ink: #151412; --ink-soft: #55524d;
+  --ink-faint: #716d66; --rule: #e7e4de; --accent: #c2410c; --accent-soft: #fbeadf;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="ember"]:not([data-theme="light"]) {
+  --paper: #121110; --paper-raised: #1a1917; --ink: #efece7; --ink-soft: #b0aba3;
+  --ink-faint: #868079; --rule: #2a2825; --accent: #fb8a4c; --accent-soft: #2b1c13;
+  color-scheme: dark;
+}
+}
+:root[data-palette="ember"][data-theme="dark"] {
+  --paper: #121110; --paper-raised: #1a1917; --ink: #efece7; --ink-soft: #b0aba3;
+  --ink-faint: #868079; --rule: #2a2825; --accent: #fb8a4c; --accent-soft: #2b1c13;
+  color-scheme: dark;
+}
+:root[data-palette="forest"] {
+  --paper: #f4f3ee; --paper-raised: #fbfaf6; --ink: #121b16; --ink-soft: #47524b;
+  --ink-faint: #626d66; --rule: #dcdfd6; --accent: #1a6544; --accent-soft: #dcebe2;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="forest"]:not([data-theme="light"]) {
+  --paper: #0f1512; --paper-raised: #161e1a; --ink: #e7ece8; --ink-soft: #a9b5ae;
+  --ink-faint: #85928b; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
+  color-scheme: dark;
+}
+}
+:root[data-palette="forest"][data-theme="dark"] {
+  --paper: #0f1512; --paper-raised: #161e1a; --ink: #e7ece8; --ink-soft: #a9b5ae;
+  --ink-faint: #85928b; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-soft: var(--ink-soft);
+  --color-faint: var(--ink-faint);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+}
+
+@layer base {
+  html { background: var(--paper); color: var(--ink); scroll-padding-top: 2rem; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { @apply font-sans antialiased; font-feature-settings: "ss01"; }
+  ::selection { background: var(--accent-soft); color: var(--ink); }
+  a, button { @apply rounded-[2px]; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+}
+
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms, color 150ms;
+  &:hover { text-decoration-color: currentColor; color: var(--accent); }
+}
+
+/* Project tiles carry each app's own tint; soften it in dark mode. */
+.tile { background: var(--tile, var(--accent-soft)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tile { background: color-mix(in oklab, var(--tile, var(--accent-soft)) 12%, var(--paper-raised)); }
+}
+:root[data-theme="dark"] .tile { background: color-mix(in oklab, var(--tile, var(--accent-soft)) 12%, var(--paper-raised)); }
+
+/* Third-party launch art: tame white-backed images in dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .launch-art { filter: brightness(0.9) contrast(0.95); }
+}
+:root[data-theme="dark"] .launch-art { filter: brightness(0.9) contrast(0.95); }

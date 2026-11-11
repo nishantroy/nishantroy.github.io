@@ -1,0 +1,38 @@
+# Reverse-chronological. Roles without `end` are current.
+- id: pinterest
+  company: Pinterest
+  url: https://www.pinterest.com
+  location: San Francisco
+  order: 1
+  roles:
+    - title: Sr. Staff Software Engineer
+      team: AI Experiences
+      start: "2026-11"
+    - title: Sr. Engineering Manager
+      team: Performance Ad Formats
+      headline: "Ran the 30-person performance ad formats org: visual search ads, Performance+ creative, and formats worth $300M+ a year."
+      start: "2024-08"
+      end: "2026-11"
+      highlights:
+        - Led the 30-person engineering org for performance ad formats in Pinterest's $4B+ ad business.
+        - Owned the advertiser experience for Performance+ creative, Pinterest's suite of AI creative-optimization tools, including ad creation and Ads Manager for AI-generated backgrounds.
+        - Shipped ad products worth more than $300M in annualized revenue, including Promotions, Creative Overlays, Where-to-Buy links, in-app shopping with Amazon and Max-Width Collections.
+        - Launched Off Ramps, a post-click discovery surface that turns ad engagement into high-intent shopping, driving incremental quality clicks while preserving Pinner engagement.
+        - Improved lower-funnel ad outcomes with GenAI creative enhancements, format personalization and grid-layout optimization.
+    - title: Engineering Manager
+      team: Ads Serving Platform
+      headline: "Led the two-year, zero-downtime rewrite of Pinterest's highest-scale recommendation system for modular execution and stronger validation. Opened Pinterest to third-party ads and launched Premiere Spotlight."
+      start: "2021-02"
+      end: "2024-08"
+      highlights:
+        - Led 15+ engineers through a two-year, zero-downtime rewrite of Pinterest's ads-serving platform, the company's highest-scale recommendation system.
+        - Redesigned the platform around modular execution, safer data models and stronger validation, improving extensibility, reliability and developer velocity.
+        - Enabled more than $100M a year in new revenue through third-party ad demand from Amazon and Google, plus new ad products such as Premiere Spotlight.
+    - title: Software Engineer and Tech Lead
+      team: Ads Serving
+      headline: "Redesigned ads serving for 100x ad corpus growth and $10M in savings."
+      start: "2018-02"
+      end: "2021-02"
+      highlights:
+        - Redesigned the core ads-serving architecture, enabling 100x ad corpus growth and a $10M cost reduction.
+        - Cut bad deploys by 30% and improved engineering velocity by 75% with release-safety tooling, pre-submit validation and CI/CD infrastructure.

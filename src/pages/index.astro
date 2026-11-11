@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Section from '../components/Section.astro';
+import AppCard from '../components/AppCard.astro';
+import LaunchCard from '../components/LaunchCard.astro';
+import Career from '../components/Career.astro';
+import WritingList from '../components/WritingList.astro';
+import Footer from '../components/Footer.astro';
+import Avatar from '../components/Avatar.astro';
+import { profile } from '../data/profile';
+import { byDateDesc } from '../lib/format';
+
+const experience = (await getCollection('experience')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection('projects', (p) => p.data.featured)).sort((a, b) => a.data.order - b.data.order);
+const launches = (await getCollection('launches')).sort((a, b) => a.data.order - b.data.order);
+const allWriting = (await getCollection('writing')).sort(byDateDesc);
+const themes = [
+  { id: 'ads-serving', label: 'Rebuilding ads serving' },
+  { id: 'shipping', label: 'Reliability and performance at scale' },
+] as const;
+const education = await getCollection('education');
+const hasHeadshot = Object.keys(import.meta.glob('../assets/headshot.{jpg,jpeg,png,webp}')).length > 0;
+const emphasis = profile.positioningEmphasis && profile.positioning.includes(profile.positioningEmphasis) ? profile.positioningEmphasis : undefined;
+const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profile.positioning, ''];
+---
+<Base>
+  <div class="mx-auto max-w-6xl px-5 sm:px-10">
+    <Header />
+    <main id="content">
+      <section class="pt-14 pb-4 sm:pt-24" aria-label="Introduction">
+        {hasHeadshot && <div class="mb-6"><Avatar /></div>}
+        <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
+          <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
+          <span><span class="sm:hidden">Sr. Staff</span><span class="hidden sm:inline">{profile.roleTitle}</span> · AI Experiences, Pinterest</span>
+        </p>
+        <h1 class="mt-6 max-w-[24ch] font-serif text-[2.25rem] font-medium leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
+          {before}{emphasis && <em class="font-normal text-accent">{emphasis}</em>}{after}
+        </h1>
+        <div class="mt-8 flex max-w-2xl flex-col gap-3 text-lg leading-relaxed text-soft">
+          {profile.intro.map((p) => <p>{p}</p>)}
+        </div>
+        <dl class="mt-14 grid grid-cols-2 border-y border-rule sm:grid-cols-4">
+          {profile.stats.map((s, i) => (
+            <div class:list={['flex flex-col-reverse justify-end gap-1 py-5', i % 2 === 1 ? 'pl-5 border-l border-rule' : 'pr-5', i >= 2 && 'border-t border-rule sm:border-t-0', i === 2 && 'sm:pl-5 sm:border-l', 'sm:px-5 sm:first:pl-0']}>
+              <dt class="font-mono text-[0.6875rem] uppercase tracking-wider text-faint">{s.label}</dt>
+              <dd class="font-serif text-4xl font-medium tabular-nums tracking-tight lg:text-5xl">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <Section id="shipped" title="Shipped at Pinterest" aside="Public launches, 2021–2026">
+        <div class="grid gap-x-10 gap-y-16 md:grid-cols-2">
+          {launches.filter((l) => l.data.featured && l.data.image).map((l) => <LaunchCard launch={l} />)}
+        </div>
+        <ul class="mt-14 flex flex-col">
+          {launches.filter((l) => !l.data.featured || !l.data.image).map(({ data: l }) => (
+            <li class="grid items-baseline gap-x-8 gap-y-1 border-t border-rule py-5 sm:grid-cols-[16rem_1fr]">
+              {l.url ? <a class="link-underline font-medium text-ink" href={l.url}>{l.title}<span aria-hidden="true"> ↗</span></a> : <span class="font-medium">{l.title}</span>}
+              <p class="text-sm text-soft">
+                {l.description}
+                {l.proof.map((p) => <> <a class="link-underline whitespace-nowrap" href={p.url}>{p.text}</a></>)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="projects" title="Things I've built" aside="Side projects">
+        <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p) => <AppCard project={p} />)}
+        </div>
+      </Section>
+
+      <Section id="career" title="Career" aside="Pinterest, 2018–now">
+        <Career companies={experience} education={education} />
+      </Section>
+
+      <Section id="writing" title="Writing & talks">
+        <div class="flex flex-col">
+          {themes.map((t) => {
+            const items = allWriting.filter((w) => w.data.theme === t.id).sort((a, b) => b.data.deliveries.length - a.data.deliveries.length);
+            return items.length > 0 && (
+              <div class="mt-12 border-t border-ink/25 pt-4 first:mt-0 first:border-t-0 first:pt-0">
+                <h3 class="mb-3 font-mono text-xs uppercase tracking-widest text-soft">{t.label}</h3>
+                <WritingList items={items} />
+              </div>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Footer />
+    </main>
+  </div>
+</Base>

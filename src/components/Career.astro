@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatYearMonth } from '../lib/format';
+
+interface Props { companies: CollectionEntry<'experience'>[]; education: CollectionEntry<'education'>[] }
+const { companies, education } = Astro.props;
+const year = (v?: string) => (v ? v.slice(0, 4) : 'Now');
+---
+<ol class="flex flex-col">
+  {companies.flatMap(({ data: c }) => c.roles.map((r) => (
+    <li class="grid gap-x-8 gap-y-1 border-b border-rule py-5 first:pt-0 sm:grid-cols-[7rem_16rem_1fr]">
+      <p class="flex items-center gap-2 font-mono text-xs leading-6 text-faint">{!r.end && <span class="size-1.5 rounded-full bg-ink" aria-hidden="true" />}{year(r.start)}–{year(r.end)}</p>
+      <p class="leading-snug"><span class="font-semibold">{r.title}</span><br /><span class="text-sm text-soft">{r.team ? `${r.team}, ` : ''}{c.company}</span></p>
+      {r.headline && <p class="text-sm leading-relaxed text-soft">{r.headline}</p>}
+    </li>
+  )))}
+  {education.map(({ data: e }) => (
+    <li class="grid gap-x-8 gap-y-1 py-5 sm:grid-cols-[7rem_16rem_1fr]">
+      <p class="font-mono text-xs leading-6 text-faint">{formatYearMonth(e.end).split(' ').at(-1)}</p>
+      <p class="leading-snug"><span class="font-semibold">{e.degree}</span><br /><span class="text-sm text-soft">{e.school}</span></p>
+    </li>
+  ))}
+</ol>
