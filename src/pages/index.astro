@@ -35,11 +35,13 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
     <Header />
     <main id="content">
       <section class="pt-14 sm:pt-24" aria-label="Introduction">
-        {hasHeadshot && <div class="mb-6"><Avatar /></div>}
-        <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
-          <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
-          <span><span class="sm:hidden">Sr. Staff</span><span class="hidden sm:inline">{profile.roleTitle}</span> · AI Experiences, Pinterest</span>
-        </p>
+        <div class="flex items-center gap-4">
+          {hasHeadshot && <Avatar />}
+          <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
+            {!hasHeadshot && <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>}
+            <span><span class="sm:hidden">Sr. Staff</span><span class="hidden sm:inline">{profile.roleTitle}</span> · AI Experiences, Pinterest</span>
+          </p>
+        </div>
         <h1 class="mt-6 max-w-[22ch] text-balance font-serif text-[2.25rem] font-medium leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
           {before}{emphasis && <em class="font-normal text-accent">{emphasis}</em>}{after}
         </h1>
