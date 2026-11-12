@@ -6,7 +6,7 @@ interface Props { launch: CollectionEntry<'launches'> }
 const l = Astro.props.launch.data;
 ---
 <article class="group flex h-full flex-col">
-  <a href={l.url ?? undefined} class="block rounded-2xl bg-raised p-2.5 ring-1 ring-rule transition-colors hover:ring-accent">
+  <a href={l.url ?? undefined} tabindex={l.url ? -1 : undefined} class="block rounded-2xl bg-raised p-2.5 ring-1 ring-rule transition-colors hover:ring-accent">
     {l.image && (
       <Image
         src={l.image}
