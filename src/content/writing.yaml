@@ -13,7 +13,7 @@
   title: "Redesigning Pinterest's ad serving systems with zero downtime, part 1"
   kind: article
   venue: Pinterest Engineering
-  date: "2024" # TODO: confirm month
+  date: "2024-06"
   url: https://medium.com/pinterest-engineering/redesigning-pinterests-ad-serving-systems-with-zero-downtime-3253d2432a0c
   featured: true
 - id: go-time-257
