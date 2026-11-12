@@ -8,7 +8,7 @@ const { id, title, aside, link } = Astro.props;
     {(aside || link) && (
       <p class="mt-2 font-mono text-xs text-faint">
         {aside}{aside && link && <span aria-hidden="true"> · </span>}
-        {link && <a class="link-underline text-soft hover:text-ink" href={link.href}>{link.label}<span aria-hidden="true"> ↗</span></a>}
+        {link && <a class="link-underline text-soft" href={link.href}>{link.label}</a>}
       </p>
     )}
   </div>

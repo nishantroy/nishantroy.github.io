@@ -1,12 +1,15 @@
 ---
 import { profile } from '../data/profile';
-const links = [{ label: 'Email', href: `mailto:${profile.email}` }, ...profile.links.filter((l) => l.label === 'LinkedIn'), ...profile.links.filter((l) => l.label !== 'LinkedIn')];
+const profiles = [...profile.links.filter((l) => l.label === 'LinkedIn'), ...profile.links.filter((l) => l.label !== 'LinkedIn')];
 ---
-<footer id="contact" class="mt-20 pb-16 sm:mt-28">
-  <h2 class="max-w-3xl font-serif text-3xl font-medium leading-tight tracking-tight sm:text-5xl">{profile.contactPrompt}</h2>
-  <ul class="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-serif text-2xl sm:text-3xl">
-    {links.map((l, i) => (
-      <li><a class:list={['link-underline transition-colors hover:text-accent', i === 0 ? 'text-accent' : 'text-ink']} href={l.href}>{l.label}<span aria-hidden="true" class="text-faint"> ↗</span></a></li>
+<footer id="contact" aria-labelledby="contact-title" class="mt-20 border-t border-rule pt-12 pb-20 sm:mt-28 sm:pt-16 sm:pb-28">
+  <h2 id="contact-title" class="max-w-[30ch] text-balance font-serif text-3xl font-medium leading-tight tracking-tight sm:text-4xl">{profile.contactPrompt}</h2>
+  <ul class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 text-[0.9375rem]">
+    <li>
+      <a class="inline-block rounded-full bg-ink px-4 py-2 font-medium text-paper transition-colors hover:bg-accent" href={`mailto:${profile.email}`}>Email</a>
+    </li>
+    {profiles.map((l) => (
+      <li><a class="link-underline font-medium text-soft" href={l.href}>{l.label}</a></li>
     ))}
   </ul>
 </footer>

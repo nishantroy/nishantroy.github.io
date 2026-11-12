@@ -74,7 +74,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         <ul class="mt-16 flex flex-col border-b border-rule">
           {launches.filter((l) => !l.data.featured || !l.data.image).map(({ data: l }) => (
             <li class="grid items-baseline gap-x-8 gap-y-1 border-t border-rule py-5 sm:grid-cols-[16rem_1fr]">
-              {l.url ? <a class="link-underline font-medium text-ink" href={l.url}>{l.title}<span aria-hidden="true"> ↗</span></a> : <span class="font-medium">{l.title}</span>}
+              {l.url ? <a class="link-underline font-medium text-ink" href={l.url}>{l.title}</a> : <span class="font-medium">{l.title}</span>}
               <p class="text-sm text-soft">
                 {l.description}
                 {l.proof.map((p) => <> <a class="link-underline whitespace-nowrap" href={p.url}>{p.text}</a></>)}
@@ -85,7 +85,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
       </Section>
 
       <Section id="projects" title="Side projects" aside="Built outside work" link={{ label: 'GitHub', href: 'https://github.com/nishantroy' }}>
-        <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((p) => <AppCard project={p} />)}
         </div>
       </Section>
@@ -100,7 +100,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
             const items = allWriting.filter((w) => w.data.theme === t.id).sort((a, b) => b.data.deliveries.length - a.data.deliveries.length);
             return items.length > 0 && (
               <div class="mt-12 border-t border-ink/25 pt-4 first:mt-0 first:border-t-0 first:pt-0">
-                <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">{t.label}</h3>
+                <h3 class="mb-5 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">{t.label}</h3>
                 <WritingList items={items} />
               </div>
             );
@@ -115,7 +115,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
             <div>
               <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">Technical reviewer</h3>
               <ul class="flex flex-col gap-1 text-[0.9375rem]">
-                {profile.reviews.map((r) => <li><a class="link-underline font-medium text-ink" href={r.href}>{r.title}</a><span class="text-soft"> · {r.publisher}</span></li>)}
+                {profile.reviews.map((r) => <li class="flex flex-col sm:block"><a class="link-underline font-medium text-ink" href={r.href}>{r.title}</a><span class="text-sm text-soft sm:text-[0.9375rem]"><span class="hidden sm:inline"> · </span>{r.publisher}</span></li>)}
               </ul>
             </div>
           </div>
