@@ -1,0 +1,90 @@
+---
+/**
+ * Section navigator. `rail` is the sticky side rail shown at lg and up;
+ * `bar` is the compact row under the header on smaller screens. Both are
+ * kept in sync with the section in view by the script below.
+ */
+interface Props { variant: 'rail' | 'bar' }
+const { variant } = Astro.props;
+const sections: { id: string; label: string; short?: string }[] = [
+  { id: 'shipped', label: 'Shipped' },
+  { id: 'projects', label: 'Side projects', short: 'Projects' },
+  { id: 'career', label: 'Career' },
+  { id: 'writing', label: 'Writing & talks', short: 'Writing' },
+  { id: 'contact', label: 'Contact' },
+];
+---
+{variant === 'rail' ? (
+  <nav aria-label="Sections" class="sticky top-24">
+    <ul class="flex flex-col border-l border-rule font-mono text-[0.6875rem] uppercase tracking-wider">
+      {sections.map((s) => (
+        <li>
+          <a
+            href={`#${s.id}`}
+            data-section-link={s.id}
+            class="-ml-px block border-l border-transparent py-1.5 pl-4 text-faint transition-colors hover:text-ink aria-[current]:border-accent aria-[current]:text-ink"
+          >{s.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+) : (
+  <nav aria-label="Sections" class="-mx-5 overflow-x-auto px-5 sm:-mx-10 sm:px-10">
+    <ul class="flex justify-between gap-x-5 border-y sm:justify-start sm:gap-x-8 border-rule py-2.5 font-mono text-[0.6875rem] uppercase tracking-wider whitespace-nowrap">
+      {sections.map((s) => (
+        <li>
+          <a
+            href={`#${s.id}`}
+            data-section-link={s.id}
+            class="inline-block py-1 text-soft transition-colors hover:text-ink aria-[current]:text-ink"
+          >{s.short ?? s.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+{variant === 'rail' && (
+  <script>
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
+    const ids = [...new Set(links.map((a) => a.dataset.sectionLink!))];
+    const targets = ids.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => !!el);
+
+    const setActive = (id: string | null) => {
+      for (const a of links) {
+        if (a.dataset.sectionLink === id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      }
+    };
+
+    // A section is "current" once its top passes a band ~40% down the viewport.
+    const inBand = new Set<string>();
+    let atBottom = false;
+    const update = () => {
+      if (atBottom) return setActive(ids.at(-1)!);
+      const current = ids.filter((id) => inBand.has(id)).at(-1);
+      if (current) return setActive(current);
+      // Between bands (or above the first section): keep the last section whose top is above the band.
+      const line = window.innerHeight * 0.4;
+      const passed = targets.filter((el) => el.getBoundingClientRect().top <= line).at(-1);
+      setActive(passed?.id ?? null);
+    };
+
+    const bandObserver = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) inBand.add(e.target.id);
+        else inBand.delete(e.target.id);
+      }
+      update();
+    }, { rootMargin: '-40% 0px -59% 0px' });
+    targets.forEach((el) => bandObserver.observe(el));
+
+    // The footer is short and never reaches the band, so treat the end of the page as "Contact".
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    document.body.append(sentinel);
+    new IntersectionObserver(([e]) => { atBottom = e.isIntersecting; update(); }).observe(sentinel);
+
+    links.forEach((a) => a.addEventListener('click', () => setActive(a.dataset.sectionLink!)));
+  </script>
+)}

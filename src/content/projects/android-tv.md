@@ -1,7 +1,7 @@
 ---
 name: Android TV tune-up
 tagline: A faster, ad-free home screen for an older TV.
-hook: "A dependency-free launcher in ~2,500 lines of Java, plus reversible adb scripts that strip bloat. Cut home-screen memory 55% on a 2 GB TV."
+hook: "A dependency-free launcher in ~4,000 lines of Java, plus reversible adb scripts that strip bloat. Cut home-screen memory 55% on a 2 GB TV."
 order: 5
 platform: Android TV
 stack: [Java, Android, adb]

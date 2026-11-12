@@ -1,8 +1,9 @@
 ---
 import { profile } from '../data/profile';
 ---
-<footer id="contact" class="mt-24 pt-8 pb-12 sm:mt-32 sm:pt-12">
+<footer id="contact" class="mt-20 pb-12 sm:mt-28">
   <p class="max-w-3xl font-serif text-3xl font-medium leading-tight tracking-tight sm:text-5xl">{profile.contactPrompt}</p>
+  <p class="mt-4 max-w-2xl text-lg text-soft">{profile.angel}</p>
   <p class="mt-6">
     <a class="link-underline font-serif text-2xl text-accent sm:text-3xl" href={`mailto:${profile.email}`}>{profile.email}</a>
   </p>

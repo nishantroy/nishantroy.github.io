@@ -20,7 +20,7 @@
   theme: shipping
   title: How Pinterest delivers software at scale
   kind: podcast
-  venue: Go Time
+  venue: Go Time · ~17k listens
   date: "2022"
   url: https://changelog.com/gotime/257
   featured: true
@@ -36,7 +36,7 @@
       year: "2022"
       url: https://conf42.com/Incident_Management_2022_Nishant_Roy_incident_management
       note: video
-    - venue: Eficode
+    - venue: The DEVOPS Conference (Eficode)
       year: "2023"
       url: https://www.youtube.com/watch?v=Tvh9_JH4yCM
       note: video

@@ -15,7 +15,7 @@ const year = (v?: string) => (v ? v.slice(0, 4) : 'Now');
     </li>
   )))}
   {education.map(({ data: e }) => (
-    <li class="grid gap-x-8 gap-y-1 py-5 sm:grid-cols-[7rem_16rem_1fr]">
+    <li class="grid gap-x-8 gap-y-1 pt-5 sm:grid-cols-[7rem_16rem_1fr]">
       <p class="font-mono text-xs leading-6 text-faint">{formatYearMonth(e.end).split(' ').at(-1)}</p>
       <p class="leading-snug"><span class="font-semibold">{e.degree}</span><br /><span class="text-sm text-soft">{e.school}</span></p>
     </li>

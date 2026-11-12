@@ -18,6 +18,12 @@ export interface Profile {
   /** Phrase inside `positioning` to set in accent italic. */
   positioningEmphasis?: string;
   stats: { value: string; label: string }[];
+  spokenAt: { names: string[]; more: string };
+  angel: string;
+  /** Invited talks at companies, shown under Writing & talks. */
+  companyTalks: { count: number; highlights: string[] };
+  /** Books I was a technical reviewer for. */
+  reviews: { title: string; href: string; publisher: string }[];
 }
 
 export const profile: Profile = {
@@ -25,10 +31,9 @@ export const profile: Profile = {
   role: 'Sr. Staff Software Engineer, AI Experiences at Pinterest',
   roleTitle: 'Sr. Staff Software Engineer',
   roleOrg: 'AI Experiences · Pinterest',
-  positioning: 'I rebuilt how Pinterest serves ads, then led ad products worth $500M+ a year.',
-  positioningEmphasis: '$500M+ a year',
+  positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
-    "I change big systems without breaking them: a two-year, zero-downtime rewrite of Pinterest's highest-scale recommendation system, then the performance ad formats built on it, including AI-driven creative optimization.",
+    "Twice, as the ad business grew from under $1B to over $4B a year: first a redesign that let the ad corpus grow 60x, then a two-year rewrite with zero downtime. Ads serving is Pinterest's highest-traffic recommendation system, reaching more than 650 million people a month.",
     'Outside work, I build things I find useful and share them with friends and family.',
   ],
   email: 'roynishant96@gmail.com',
@@ -41,16 +46,25 @@ export const profile: Profile = {
   resume: undefined,
   recognition: [
     'Go Enterprise Advisory Board, 2022–2024',
-    'Invited speaker at 10+ companies on infrastructure scaling, Go performance and incident management',
+    'Invited speaker at 14 companies on infrastructure scaling, Go performance and incident management',
   ],
   siteDescription:
     "Nishant Roy is a Sr. Staff Software Engineer on Pinterest's AI Experiences team. Previously he scaled Pinterest's ad delivery and led the org behind its performance ad formats.",
   palette: 'forest',
   contactPrompt: "I'm always glad to hear from people working on interesting things.",
   stats: [
-    { value: '$300M+', label: 'a year from new ad formats alone' },
-    { value: '8', label: 'public ad launches' },
-    { value: '10+', label: "companies I've spoken at" },
-    { value: '5', label: 'side projects, 2 with on-device AI' },
+    { value: '$500M+', label: 'a year from ad products I led' },
+    { value: '10+', label: 'public product launches' },
+    { value: '5+ yrs', label: 'leading engineering teams' },
+  ],
+  spokenAt: { names: ['SREcon', 'AWS', 'NASA', 'Snap', 'Figma', 'DoorDash', 'Shopify'], more: '15+' },
+  angel: 'I also make small angel investments in early-stage startups.',
+  companyTalks: {
+    count: 14,
+    highlights: ['AWS', 'Snap', 'NASA', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures', 'GGV Capital'],
+  },
+  reviews: [
+    { title: 'Distributed Services with Go', href: 'https://pragprog.com/titles/tjgo/distributed-services-with-go/', publisher: 'Pragmatic Bookshelf' },
+    { title: 'Programming Ruby 3.3 (5th edition)', href: 'https://pragprog.com/titles/ruby5/programming-ruby-3-3-5th-edition/', publisher: 'Pragmatic Bookshelf' },
   ],
 };

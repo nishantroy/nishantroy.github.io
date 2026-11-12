@@ -8,6 +8,7 @@ import LaunchCard from '../components/LaunchCard.astro';
 import Career from '../components/Career.astro';
 import WritingList from '../components/WritingList.astro';
 import Footer from '../components/Footer.astro';
+import SectionNav from '../components/SectionNav.astro';
 import Avatar from '../components/Avatar.astro';
 import { profile } from '../data/profile';
 import { byDateDesc } from '../lib/format';
@@ -26,10 +27,14 @@ const emphasis = profile.positioningEmphasis && profile.positioning.includes(pro
 const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profile.positioning, ''];
 ---
 <Base>
-  <div class="mx-auto max-w-6xl px-5 sm:px-10">
+  <div class="mx-auto max-w-6xl px-5 sm:px-10 lg:grid lg:max-w-[84rem] lg:grid-cols-[8rem_minmax(0,72rem)] lg:justify-center lg:gap-x-12">
+    <aside class="hidden pt-[11.25rem] lg:block">
+      <SectionNav variant="rail" />
+    </aside>
+    <div class="min-w-0">
     <Header />
     <main id="content">
-      <section class="pt-14 pb-4 sm:pt-24" aria-label="Introduction">
+      <section class="pt-14 sm:pt-24" aria-label="Introduction">
         {hasHeadshot && <div class="mb-6"><Avatar /></div>}
         <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
           <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
@@ -41,21 +46,30 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         <div class="mt-8 flex max-w-2xl flex-col gap-3 text-lg leading-relaxed text-soft">
           {profile.intro.map((p) => <p>{p}</p>)}
         </div>
-        <dl class="mt-14 grid grid-cols-2 border-y border-rule sm:grid-cols-4">
-          {profile.stats.map((s, i) => (
-            <div class:list={['flex flex-col-reverse justify-end gap-1 py-5', i % 2 === 1 ? 'pl-5 border-l border-rule' : 'pr-5', i >= 2 && 'border-t border-rule sm:border-t-0', i === 2 && 'sm:pl-5 sm:border-l', 'sm:px-5 sm:first:pl-0']}>
-              <dt class="font-mono text-[0.6875rem] uppercase tracking-wider text-faint">{s.label}</dt>
-              <dd class="font-serif text-4xl font-medium tabular-nums tracking-tight lg:text-5xl">{s.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <div class="mt-14 border-y border-rule">
+          <dl class="grid sm:grid-cols-3">
+            {profile.stats.map((s, i) => (
+              <div class:list={['flex flex-col-reverse justify-end gap-1 py-5 sm:px-5 sm:first:pl-0', i > 0 && 'border-t border-rule sm:border-t-0 sm:border-l']}>
+                <dt class="max-w-[32ch] font-mono text-[0.6875rem] uppercase tracking-wider text-faint">{s.label}</dt>
+                <dd class="font-serif text-4xl font-medium tabular-nums tracking-tight lg:text-5xl">{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <div class="flex flex-col gap-2 border-t border-rule py-4 sm:flex-row sm:items-baseline sm:gap-6">
+            <p id="spoken-at" class="shrink-0 font-mono text-[0.6875rem] uppercase tracking-wider text-faint">Spoken at</p>
+            <ul aria-labelledby="spoken-at" class="flex flex-wrap items-baseline gap-x-5 gap-y-1 sm:gap-x-6">
+              {profile.spokenAt.names.map((n) => <li class="font-serif text-lg font-medium tracking-tight text-soft sm:text-xl">{n}</li>)}
+              <li class="text-sm text-faint">and {profile.spokenAt.more} more</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <Section id="shipped" title="Shipped at Pinterest" aside="Public launches, 2021–2026">
         <div class="grid gap-x-10 gap-y-16 md:grid-cols-2">
           {launches.filter((l) => l.data.featured && l.data.image).map((l) => <LaunchCard launch={l} />)}
         </div>
-        <ul class="mt-14 flex flex-col">
+        <ul class="mt-16 flex flex-col border-b border-rule">
           {launches.filter((l) => !l.data.featured || !l.data.image).map(({ data: l }) => (
             <li class="grid items-baseline gap-x-8 gap-y-1 border-t border-rule py-5 sm:grid-cols-[16rem_1fr]">
               {l.url ? <a class="link-underline font-medium text-ink" href={l.url}>{l.title}<span aria-hidden="true"> ↗</span></a> : <span class="font-medium">{l.title}</span>}
@@ -68,7 +82,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         </ul>
       </Section>
 
-      <Section id="projects" title="Things I've built" aside="Side projects">
+      <Section id="projects" title="Side projects" aside="Built outside work">
         <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => <AppCard project={p} />)}
         </div>
@@ -84,15 +98,30 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
             const items = allWriting.filter((w) => w.data.theme === t.id).sort((a, b) => b.data.deliveries.length - a.data.deliveries.length);
             return items.length > 0 && (
               <div class="mt-12 border-t border-ink/25 pt-4 first:mt-0 first:border-t-0 first:pt-0">
-                <h3 class="mb-3 font-mono text-xs uppercase tracking-widest text-soft">{t.label}</h3>
+                <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">{t.label}</h3>
                 <WritingList items={items} />
               </div>
             );
           })}
+          <div class="mt-12 grid gap-x-8 gap-y-6 border-t border-ink/25 pt-4 sm:grid-cols-2">
+            <div>
+              <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">Invited talks</h3>
+              <p class="text-[0.9375rem] leading-relaxed text-soft">
+                <span class="font-medium text-ink">{profile.companyTalks.count} companies</span>, on scaling infrastructure, Go performance and incident management, including {profile.companyTalks.highlights.slice(0, -1).join(', ')} and {profile.companyTalks.highlights.at(-1)}.
+              </p>
+            </div>
+            <div>
+              <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">Technical reviewer</h3>
+              <ul class="flex flex-col gap-1 text-[0.9375rem]">
+                {profile.reviews.map((r) => <li><a class="link-underline font-medium text-ink" href={r.href}>{r.title}</a><span class="text-soft"> · {r.publisher}</span></li>)}
+              </ul>
+            </div>
+          </div>
         </div>
       </Section>
 
       <Footer />
     </main>
+    </div>
   </div>
 </Base>
