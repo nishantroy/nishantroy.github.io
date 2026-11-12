@@ -7,10 +7,10 @@
 interface Props { variant: 'rail' | 'bar' }
 const { variant } = Astro.props;
 const sections: { id: string; label: string; short?: string }[] = [
-  { id: 'shipped', label: 'Shipped' },
+  { id: 'shipped', label: 'Pinterest launches', short: 'Launches' },
   { id: 'projects', label: 'Side projects', short: 'Projects' },
   { id: 'career', label: 'Career' },
-  { id: 'writing', label: 'Writing & talks', short: 'Writing' },
+  { id: 'writing', label: 'Thought leadership', short: 'Talks' },
   { id: 'contact', label: 'Contact' },
 ];
 ---
@@ -22,7 +22,7 @@ const sections: { id: string; label: string; short?: string }[] = [
           <a
             href={`#${s.id}`}
             data-section-link={s.id}
-            class="-ml-px block border-l border-transparent py-1.5 pl-4 text-faint transition-colors hover:text-ink aria-[current]:border-accent aria-[current]:text-ink"
+            class="-ml-px block whitespace-nowrap border-l border-transparent py-1.5 pl-4 text-faint transition-colors hover:text-ink aria-[current]:border-accent aria-[current]:text-ink"
           >{s.label}</a>
         </li>
       ))}

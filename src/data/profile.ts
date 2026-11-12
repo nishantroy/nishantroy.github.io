@@ -6,6 +6,7 @@ export interface Profile {
   roleOrg: string;
   positioning: string;
   intro: string[];
+  email: string;
   location: string;
   links: { label: string; href: string }[];
   /** Public résumé without phone number. TODO: add /resume.pdf to public/ and set this. */
@@ -34,9 +35,10 @@ export const profile: Profile = {
   positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
     "I redesigned Pinterest's highest-traffic recommendation system twice, paving the way for an ad business that grew from under $1B to over $4B a year. Then I led the teams that built new ad formats on top of it, from visual search ads to AI-generated creative. Now I'm back to writing code, building AI experiences at Pinterest.",
-    "I grew up in Delhi, Russia and Ghana, studied in Atlanta, and have called San Francisco home for almost a decade. Off the clock, I'm chasing a better backhand, a better espresso shot and the next recipe worth cooking twice, or building small apps for friends and family.",
+    "I grew up in Delhi, Russia and Ghana, studied in Atlanta, and have called San Francisco home for almost a decade. Off the clock, I'm on a tennis or pickleball court, chasing a better espresso shot and the next recipe worth cooking twice, or building small apps for friends and family.",
   ],
   location: 'San Francisco',
+  email: 'roynishant96@gmail.com',
   links: [
     { label: 'GitHub', href: 'https://github.com/nishantroy' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nishantroy/' },

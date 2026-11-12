@@ -1,11 +1,16 @@
 ---
-interface Props { id: string; title: string; aside?: string }
-const { id, title, aside } = Astro.props;
+interface Props { id: string; title: string; aside?: string; link?: { label: string; href: string } }
+const { id, title, aside, link } = Astro.props;
 ---
 <section id={id} aria-labelledby={`${id}-title`} class="mt-20 sm:mt-28">
   <div class="mb-10 sm:mb-12">
     <h2 id={`${id}-title`} class="font-serif text-3xl font-medium tracking-tight sm:text-4xl">{title}</h2>
-    {aside && <p class="mt-2 font-mono text-xs text-faint">{aside}</p>}
+    {(aside || link) && (
+      <p class="mt-2 font-mono text-xs text-faint">
+        {aside}{aside && link && <span aria-hidden="true"> · </span>}
+        {link && <a class="link-underline text-soft hover:text-ink" href={link.href}>{link.label}<span aria-hidden="true"> ↗</span></a>}
+      </p>
+    )}
   </div>
   <slot />
 </section>

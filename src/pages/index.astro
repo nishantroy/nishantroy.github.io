@@ -27,7 +27,7 @@ const emphasis = profile.positioningEmphasis && profile.positioning.includes(pro
 const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profile.positioning, ''];
 ---
 <Base>
-  <div class="mx-auto max-w-6xl px-5 sm:px-10 lg:grid lg:max-w-[84rem] lg:grid-cols-[8rem_minmax(0,72rem)] lg:justify-center lg:gap-x-12">
+  <div class="mx-auto max-w-6xl px-5 sm:px-10 lg:grid lg:max-w-[86rem] lg:grid-cols-[10rem_minmax(0,72rem)] lg:justify-center lg:gap-x-10">
     <aside class="hidden pt-[5.5rem] lg:block">
       <SectionNav variant="rail" />
     </aside>
@@ -84,7 +84,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         </ul>
       </Section>
 
-      <Section id="projects" title="Side projects" aside="Built outside work">
+      <Section id="projects" title="Side projects" aside="Built outside work" link={{ label: 'GitHub', href: 'https://github.com/nishantroy' }}>
         <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => <AppCard project={p} />)}
         </div>
@@ -94,7 +94,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         <Career companies={experience} education={education} />
       </Section>
 
-      <Section id="writing" title="Writing & talks">
+      <Section id="writing" title="Thought leadership" aside="Talks, articles and a podcast" link={{ label: 'Medium', href: 'https://medium.com/@roynishant96' }}>
         <div class="flex flex-col">
           {themes.map((t) => {
             const items = allWriting.filter((w) => w.data.theme === t.id).sort((a, b) => b.data.deliveries.length - a.data.deliveries.length);
