@@ -9,7 +9,7 @@ status: Personal use
 tint: "#16242c"
 frame: tv
 repo: https://github.com/nishantroy/android-tv-tuneup
-screenshot: ../../assets/projects/android-tv/home-v2.png
-screenshotAlt: "A custom Android TV home screen over an aurora wallpaper: the time and weather, a carousel of streaming apps with YouTube in focus, and a frosted Continue Watching row"
+screenshot: ../../assets/projects/android-tv/home-sf.png
+screenshotAlt: "A custom Android TV home screen over a San Francisco sunset wallpaper with the Golden Gate Bridge: the time and weather, a carousel of streaming apps with Apple TV in focus, and a frosted Continue Watching row"
 ---
 Measured on a TCL 55S434 (Android TV 9, 2 GB RAM): home-screen app memory 93 MB to 42 MB. Every change is reversible.

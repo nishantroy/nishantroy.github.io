@@ -8,7 +8,8 @@ platform: Web
 stack: [TypeScript, React, Durable Objects]
 status: Live
 repo: https://github.com/nishantroy/poker
-screenshot: ../../assets/projects/poker/1.webp
-screenshotAlt: "Bink City table mid-hand: four players, a flop of three cards, a pot of 300 and Fold, Call and Raise buttons"
+frame: browser
+screenshot: ../../assets/projects/poker/desktop-v2.png
+screenshotAlt: "Bink City on desktop mid-hand: four players around a teal table, a flop of three cards, a pot of 220 and a 60 bet to call, with the table chat open on the right"
 ---
 Each table is a Durable Object holding authoritative game state over WebSockets, with alarms for turn timers so it hibernates between actions. Hold'em, Omaha and house variants, a per-player HUD, and hand replays with street-by-street equities.
