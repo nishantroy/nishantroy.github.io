@@ -33,7 +33,7 @@ export const profile: Profile = {
   roleOrg: 'AI Experiences · Pinterest',
   positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
-    "Twice, as the ad business grew from under $1B to over $4B a year: first a redesign that let the ad corpus grow 60x, then a two-year rewrite with zero downtime. Ads serving is Pinterest's highest-traffic recommendation system, reaching more than 650 million people a month.",
+    "Ads serving is Pinterest's highest-traffic recommendation system, reaching more than 650 million people a month. I rewrote it twice: first to make it stateless, so the ad corpus could grow almost without limit, then in a two-year migration with zero downtime. Each one removed a ceiling on the ad business, which grew from under $1B to over $4B a year.",
     'Outside work, I build things I find useful and share them with friends and family.',
   ],
   email: 'roynishant96@gmail.com',
