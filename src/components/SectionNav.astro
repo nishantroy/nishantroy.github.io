@@ -16,7 +16,7 @@ const sections: { id: string; label: string; short?: string }[] = [
 ---
 {variant === 'rail' ? (
   <nav aria-label="Sections" class="sticky top-24">
-    <ul class="flex flex-col border-l border-rule font-mono text-[0.6875rem] uppercase tracking-wider">
+    <ul class="flex flex-col border-l border-rule font-mono text-xs uppercase tracking-wider">
       {sections.map((s) => (
         <li>
           <a
@@ -30,7 +30,7 @@ const sections: { id: string; label: string; short?: string }[] = [
   </nav>
 ) : (
   <nav aria-label="Sections" class="-mx-5 overflow-x-auto px-5 sm:-mx-10 sm:px-10">
-    <ul class="flex justify-between gap-x-5 border-y sm:justify-start sm:gap-x-8 border-rule py-2.5 font-mono text-[0.6875rem] uppercase tracking-wider whitespace-nowrap">
+    <ul class="flex justify-between gap-x-5 border-y sm:justify-start sm:gap-x-8 border-rule py-2.5 font-mono text-xs uppercase tracking-wider whitespace-nowrap">
       {sections.map((s) => (
         <li>
           <a

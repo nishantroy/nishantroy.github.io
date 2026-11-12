@@ -39,8 +39,8 @@
   color-scheme: dark;
 }
 :root[data-palette="forest"] {
-  --paper: #f4f3ee; --paper-raised: #fbfaf6; --ink: #121b16; --ink-soft: #47524b;
-  --ink-faint: #626d66; --rule: #dcdfd6; --accent: #1a6544; --accent-soft: #dcebe2;
+  --paper: #f4f3ee; --paper-raised: #fbfaf6; --ink: #121b16; --ink-soft: #39433d;
+  --ink-faint: #4f5953; --rule: #dcdfd6; --accent: #1a6544; --accent-soft: #dcebe2;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {

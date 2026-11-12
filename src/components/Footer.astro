@@ -4,7 +4,7 @@ const profiles = [...profile.links.filter((l) => l.label === 'LinkedIn'), ...pro
 ---
 <footer id="contact" aria-labelledby="contact-title" class="mt-20 pb-20 sm:mt-28 sm:pb-28">
   <h2 id="contact-title" class="max-w-[30ch] text-balance font-serif text-3xl font-medium leading-tight tracking-tight sm:text-4xl">{profile.contactPrompt}</h2>
-  <ul class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 text-[0.9375rem]">
+  <ul class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 text-base">
     <li>
       <a class="inline-block rounded-full bg-ink px-4 py-2 font-medium text-paper transition-colors hover:bg-accent" href={`mailto:${profile.email}`}>Email me</a>
     </li>

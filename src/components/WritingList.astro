@@ -21,28 +21,28 @@ const kindLabel = { talk: 'Talk', podcast: 'Podcast', article: 'Article' } as co
 <ul class="flex flex-col">
   {items.map(({ data: w }, i) => (
     <li class:list={['grid gap-x-8 gap-y-1 py-4 first:pt-0 sm:grid-cols-[7rem_1fr]', i > 0 && years[i] !== '' && 'mt-2 border-t border-rule pt-6']}>
-      <p class="font-mono text-xs leading-6 text-faint">{showYear ? years[i] : (w.date?.length === 7 ? formatYearMonth(w.date).split(' ')[0] : '')}</p>
+      <p class="font-mono text-[0.8125rem] leading-6 text-faint">{showYear ? years[i] : (w.date?.length === 7 ? formatYearMonth(w.date).split(' ')[0] : '')}</p>
       <div>
         <a class="link-underline font-medium text-ink" href={w.url}>{w.title}</a>
         {w.deliveries.length > 1 ? (
           <>
-            <p class="mt-1 text-sm text-soft">{kindLabel[w.kind]} at</p>
-            <ul class="mt-1.5 flex flex-col gap-1 border-l border-rule pl-3 text-sm">
+            <p class="mt-1 text-[0.9375rem] text-soft">{kindLabel[w.kind]} at</p>
+            <ul class="mt-1.5 flex flex-col gap-1 border-l border-rule pl-3 text-[0.9375rem]">
               {w.deliveries.map((d) => (
                 <li class="flex items-baseline gap-3">
-                  <span class="w-9 shrink-0 font-mono text-xs text-faint">{d.year}</span>
+                  <span class="w-9 shrink-0 font-mono text-[0.8125rem] text-faint">{d.year}</span>
                   <span><a class="link-underline text-ink" href={d.url}>{d.venue}</a>{d.note && <span class="text-faint"> · {d.note}</span>}</span>
                 </li>
               ))}
             </ul>
             {w.also.length > 0 && (
-              <p class="mt-2 text-sm text-soft">
+              <p class="mt-2 text-[0.9375rem] text-soft">
                 Article{w.also.map((a) => <> · <a class="link-underline" href={a.href}>{a.label}</a></>)}
               </p>
             )}
           </>
         ) : (
-        <p class="mt-1 text-sm text-soft">
+        <p class="mt-1 text-[0.9375rem] text-soft">
           {kindLabel[w.kind]} · {w.venue}
           {w.slides && <> · <a class="link-underline" href={w.slides}>Slides</a></>}
           {w.video && <> · <a class="link-underline" href={w.video}>Video</a></>}

@@ -37,7 +37,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
       <section class="pt-8 sm:pt-6" aria-label="Introduction">
         <div class="flex items-center gap-4">
           {hasHeadshot && <Avatar />}
-          <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
+          <p class="flex items-start gap-2.5 font-mono text-[0.8125rem] text-soft">
             {!hasHeadshot && <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>}
             <span><span class="sm:hidden">Sr. Staff</span><span class="hidden sm:inline">{profile.roleTitle}</span> · AI Experiences, Pinterest</span>
           </p>
@@ -52,16 +52,16 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
           <dl class="grid sm:grid-cols-3">
             {profile.stats.map((s, i) => (
               <div class:list={['flex flex-col-reverse justify-end gap-1 py-5 sm:px-5 sm:first:pl-0', i > 0 && 'border-t border-rule sm:border-t-0 sm:border-l']}>
-                <dt class="max-w-[32ch] font-mono text-[0.6875rem] uppercase tracking-wider text-faint">{s.label}</dt>
+                <dt class="max-w-[32ch] font-mono text-xs uppercase tracking-wider text-faint">{s.label}</dt>
                 <dd class="font-serif text-4xl font-medium tabular-nums tracking-tight lg:text-5xl">{s.value}</dd>
               </div>
             ))}
           </dl>
           <div class="flex flex-col gap-2 border-t border-rule py-4 sm:flex-row sm:items-baseline sm:gap-6">
-            <p id="spoken-at" class="shrink-0 font-mono text-[0.6875rem] uppercase tracking-wider text-faint">Spoken at</p>
+            <p id="spoken-at" class="shrink-0 font-mono text-xs uppercase tracking-wider text-faint">Spoken at</p>
             <ul aria-labelledby="spoken-at" class="flex flex-wrap items-baseline gap-x-5 gap-y-1 sm:gap-x-6">
               {profile.spokenAt.names.map((n) => <li class="font-serif text-lg font-medium tracking-tight text-soft sm:text-xl">{n}</li>)}
-              <li class="text-sm text-faint">and {profile.spokenAt.more} more</li>
+              <li class="text-[0.9375rem] text-faint">and {profile.spokenAt.more} more</li>
             </ul>
           </div>
         </div>
@@ -75,7 +75,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
           {launches.filter((l) => !l.data.featured || !l.data.image).map(({ data: l }) => (
             <li class="grid items-baseline gap-x-8 gap-y-1 border-t border-rule py-5 sm:grid-cols-[16rem_1fr]">
               {l.url ? <a class="link-underline font-medium text-ink" href={l.url}>{l.title}</a> : <span class="font-medium">{l.title}</span>}
-              <p class="text-sm text-soft">
+              <p class="text-[0.9375rem] text-soft">
                 {l.description}
                 {l.proof.map((p) => <> <a class="link-underline whitespace-nowrap" href={p.url}>{p.text}</a></>)}
               </p>
@@ -100,22 +100,22 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
             const items = allWriting.filter((w) => w.data.theme === t.id).sort((a, b) => b.data.deliveries.length - a.data.deliveries.length);
             return items.length > 0 && (
               <div class="mt-12 border-t border-ink/25 pt-4 first:mt-0 first:border-t-0 first:pt-0">
-                <h3 class="mb-5 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">{t.label}</h3>
+                <h3 class="mb-5 font-mono text-xs uppercase tracking-wider text-soft">{t.label}</h3>
                 <WritingList items={items} />
               </div>
             );
           })}
           <div class="mt-12 grid gap-x-8 gap-y-6 border-t border-ink/25 pt-4 sm:grid-cols-2">
             <div>
-              <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">Invited talks</h3>
-              <p class="text-[0.9375rem] leading-relaxed text-soft">
+              <h3 class="mb-3 font-mono text-xs uppercase tracking-wider text-soft">Invited talks</h3>
+              <p class="text-base leading-relaxed text-soft">
                 <span class="font-medium text-ink">{profile.companyTalks.count} companies</span>, on scaling infrastructure, Go performance and incident management, including {profile.companyTalks.highlights.slice(0, -1).join(', ')} and {profile.companyTalks.highlights.at(-1)}.
               </p>
             </div>
             <div>
-              <h3 class="mb-3 font-mono text-[0.6875rem] uppercase tracking-wider text-soft">Technical reviewer</h3>
-              <ul class="flex flex-col gap-1 text-[0.9375rem]">
-                {profile.reviews.map((r) => <li class="flex flex-col sm:block"><a class="link-underline font-medium text-ink" href={r.href}>{r.title}</a><span class="text-sm text-soft sm:text-[0.9375rem]"><span class="hidden sm:inline"> · </span>{r.publisher}</span></li>)}
+              <h3 class="mb-3 font-mono text-xs uppercase tracking-wider text-soft">Technical reviewer</h3>
+              <ul class="flex flex-col gap-1 text-base">
+                {profile.reviews.map((r) => <li class="flex flex-col sm:block"><a class="link-underline font-medium text-ink" href={r.href}>{r.title}</a><span class="text-[0.9375rem] text-soft sm:text-base"><span class="hidden sm:inline"> · </span>{r.publisher}</span></li>)}
               </ul>
             </div>
           </div>
