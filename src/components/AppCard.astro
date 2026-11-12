@@ -18,7 +18,7 @@ const live = p.status.toLowerCase().startsWith('live');
   <div class="mt-1.5 flex flex-wrap items-center gap-2">
     <span class:list={[
       'rounded-full px-2 py-0.5 font-mono text-xs',
-      live ? 'bg-accent-soft text-accent' : 'border border-rule text-faint',
+      live ? 'bg-accent-soft text-[color-mix(in_oklab,var(--accent)_65%,var(--ink))]' : 'border border-rule text-faint',
     ]}>{p.status}</span>
     <span class="font-mono text-xs text-faint">{p.platform}</span>
   </div>

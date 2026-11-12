@@ -40,19 +40,19 @@
 }
 :root[data-palette="forest"] {
   --paper: #f4f3ee; --paper-raised: #fbfaf6; --ink: #121b16; --ink-soft: #39433d;
-  --ink-faint: #4f5953; --rule: #dcdfd6; --accent: #1a6544; --accent-soft: #dcebe2;
+  --ink-faint: #444e48; --rule: #dcdfd6; --accent: #1a6544; --accent-soft: #dcebe2;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root[data-palette="forest"]:not([data-theme="light"]) {
   --paper: #0f1512; --paper-raised: #161e1a; --ink: #e7ece8; --ink-soft: #a9b5ae;
-  --ink-faint: #85928b; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
+  --ink-faint: #9daaa3; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
   color-scheme: dark;
 }
 }
 :root[data-palette="forest"][data-theme="dark"] {
   --paper: #0f1512; --paper-raised: #161e1a; --ink: #e7ece8; --ink-soft: #a9b5ae;
-  --ink-faint: #85928b; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
+  --ink-faint: #9daaa3; --rule: #24312a; --accent: #74d3a3; --accent-soft: #13261c;
   color-scheme: dark;
 }
 
