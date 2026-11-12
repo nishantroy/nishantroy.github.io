@@ -1,14 +1,51 @@
 ---
 import { profile } from '../data/profile';
+const key = profile.contactFormKey;
+const field = 'mt-1.5 w-full rounded-lg border border-rule bg-raised px-3.5 py-2.5 text-base text-ink placeholder:text-faint focus:border-accent focus:outline-none';
 ---
 <footer id="contact" class="mt-20 pb-12 sm:mt-28">
-  <p class="max-w-3xl font-serif text-3xl font-medium leading-tight tracking-tight sm:text-5xl">{profile.contactPrompt}</p>
-  <p class="mt-4 max-w-2xl text-lg text-soft">{profile.angel}</p>
-  <p class="mt-6">
-    <a class="link-underline font-serif text-2xl text-accent sm:text-3xl" href={`mailto:${profile.email}`}>{profile.email}</a>
-  </p>
-  <div class="mt-16 flex flex-wrap justify-between gap-4 font-mono text-xs text-faint">
-    <p>{profile.name} · {profile.location}</p>
-    <ul class="flex gap-4">{profile.links.map((l) => <li><a class="hover:text-ink" href={l.href}>{l.label}</a></li>)}</ul>
-  </div>
+  <h2 class="max-w-3xl font-serif text-3xl font-medium leading-tight tracking-tight sm:text-5xl">{profile.contactPrompt}</h2>
+  <form id="contact-form" class="mt-8 grid max-w-2xl gap-4 sm:grid-cols-2" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={key} />
+    <input type="hidden" name="subject" value="New message from nishantroy.github.io" />
+    <input type="hidden" name="from_name" value="nishantroy.github.io" />
+    <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <label class="block text-sm text-soft">Name
+      <input class={field} type="text" name="name" required autocomplete="name" />
+    </label>
+    <label class="block text-sm text-soft">Email
+      <input class={field} type="email" name="email" required autocomplete="email" />
+    </label>
+    <label class="block text-sm text-soft sm:col-span-2">Message
+      <textarea class={`${field} min-h-32 resize-y`} name="message" required rows="5"></textarea>
+    </label>
+    <div class="flex flex-wrap items-center gap-4 sm:col-span-2">
+      <button type="submit" class="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent disabled:opacity-50">Send</button>
+      <p id="contact-status" class="text-sm text-soft" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+  <ul class="mt-16 flex gap-5 font-mono text-xs text-faint">
+    {profile.links.map((l) => <li><a class="hover:text-ink" href={l.href}>{l.label}</a></li>)}
+  </ul>
 </footer>
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('contact-status');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = form.querySelector('button');
+    if (button) button.disabled = true;
+    if (status) status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || 'failed');
+      form.reset();
+      if (status) status.textContent = 'Thanks, your message is on its way.';
+    } catch {
+      if (status) status.textContent = 'That didn’t go through. Please try again in a moment.';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+</script>

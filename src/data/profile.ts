@@ -6,7 +6,6 @@ export interface Profile {
   roleOrg: string;
   positioning: string;
   intro: string[];
-  email: string;
   location: string;
   links: { label: string; href: string }[];
   /** Public résumé without phone number. TODO: add /resume.pdf to public/ and set this. */
@@ -19,7 +18,8 @@ export interface Profile {
   positioningEmphasis?: string;
   stats: { value: string; label: string }[];
   spokenAt: { names: string[]; more: string };
-  angel: string;
+  /** Web3Forms access key (public by design; it only lets the form send to the owner's inbox). */
+  contactFormKey: string;
   /** Invited talks at companies, shown under Writing & talks. */
   companyTalks: { count: number; highlights: string[] };
   /** Books I was a technical reviewer for. */
@@ -34,9 +34,8 @@ export const profile: Profile = {
   positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
     "I redesigned Pinterest's highest-traffic recommendation system twice, paving the way for an ad business that grew from under $1B to over $4B a year. Then I led the teams that built new ad formats on top of it, from visual search ads to AI-generated creative. Now I'm back to writing code, building AI experiences at Pinterest.",
-    'I grew up in Delhi, Russia and Ghana, studied in Atlanta, and have lived in San Francisco for almost a decade. Outside work: tennis, espresso, cooking, and small apps for friends and family.',
+    "I grew up in Delhi, Russia and Ghana, studied in Atlanta, and have called San Francisco home for almost a decade. Off the clock, I'm chasing a better backhand, a better espresso shot and the next recipe worth cooking twice, or building small apps for friends and family.",
   ],
-  email: 'roynishant96@gmail.com',
   location: 'San Francisco',
   links: [
     { label: 'GitHub', href: 'https://github.com/nishantroy' },
@@ -46,7 +45,7 @@ export const profile: Profile = {
   resume: undefined,
   recognition: [
     'Go Enterprise Advisory Board, 2022–2024',
-    'Invited speaker at 14 companies on infrastructure scaling, Go performance and incident management',
+    'Invited speaker at 12 companies on infrastructure scaling, Go performance and incident management',
   ],
   siteDescription:
     "Nishant Roy is a Sr. Staff Software Engineer on Pinterest's AI Experiences team. Previously he scaled Pinterest's ad delivery and led the org behind its performance ad formats.",
@@ -57,11 +56,11 @@ export const profile: Profile = {
     { value: '10+', label: 'public product launches' },
     { value: '5+ yrs', label: 'leading engineering teams' },
   ],
-  spokenAt: { names: ['SREcon', 'AWS', 'NASA', 'Snap', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures'], more: '10+' },
-  angel: 'I also make small angel investments in early-stage startups.',
+  spokenAt: { names: ['SREcon', 'AWS', 'NASA', 'Snap', 'Figma', 'DoorDash', 'Shopify', 'Etsy'], more: '10+' },
+  contactFormKey: 'TODO-web3forms-access-key',
   companyTalks: {
-    count: 14,
-    highlights: ['AWS', 'Snap', 'NASA', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures'],
+    count: 12,
+    highlights: ['AWS', 'Snap', 'NASA', 'Figma', 'DoorDash', 'Shopify', 'Etsy'],
   },
   reviews: [
     { title: 'Distributed Services with Go', href: 'https://pragprog.com/titles/tjgo/distributed-services-with-go/', publisher: 'Pragmatic Bookshelf' },

@@ -6,13 +6,10 @@ import SectionNav from './SectionNav.astro';
 <header class="pt-6">
   <div class="flex items-center justify-between gap-4">
     <a href="/" class="font-serif text-xl font-medium tracking-tight">{profile.name}</a>
-    <nav aria-label="Profiles" class="flex items-center gap-1 text-sm sm:gap-4">
-      {profile.links.filter((l) => l.label !== 'Medium').map((l) => (
-        <a class="hidden px-1 text-soft transition-colors hover:text-accent sm:inline" href={l.href}>{l.label}</a>
-      ))}
-      <a class="ml-1 rounded-full bg-ink px-3.5 py-1.5 font-medium text-paper transition-colors hover:bg-accent" href={`mailto:${profile.email}`}>Email</a>
+    <div class="flex items-center gap-2 text-sm sm:gap-3">
+      <a class="rounded-full bg-ink px-3.5 py-1.5 font-medium text-paper transition-colors hover:bg-accent" href="/#contact">Contact</a>
       <ThemeToggle />
-    </nav>
+    </div>
   </div>
   <div class="mt-5 lg:hidden"><SectionNav variant="bar" /></div>
 </header>
