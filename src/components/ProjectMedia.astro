@@ -18,10 +18,10 @@ const { src, alt, frame } = Astro.props;
     </div>
   </div>
 ) : (
-  <div class="absolute -right-6 -bottom-6 left-8 top-8 overflow-hidden rounded-tl-xl bg-raised shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)] ring-1 ring-black/10 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transform-none">
-    <div class="flex h-7 items-center gap-1.5 px-3" aria-hidden="true">
-      <span class="size-2 rounded-full bg-rule"></span><span class="size-2 rounded-full bg-rule"></span><span class="size-2 rounded-full bg-rule"></span>
+  <div class="absolute inset-x-[6%] top-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-[#1a1a2b] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)] ring-1 ring-black/20 transition-transform duration-300 group-hover:-translate-y-[calc(50%+6px)] motion-reduce:transform-none">
+    <div class="flex h-5 items-center gap-1 px-2.5" aria-hidden="true">
+      <span class="size-1.5 rounded-full bg-white/25"></span><span class="size-1.5 rounded-full bg-white/25"></span><span class="size-1.5 rounded-full bg-white/25"></span>
     </div>
-    <Image src={src} alt={alt} widths={[600, 900, 1200]} sizes="(min-width: 768px) 520px, 90vw" class="w-full" />
+    <Image src={src} alt={alt} widths={[400, 640, 900, 1200]} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 88vw" class="w-full" />
   </div>
 )}
