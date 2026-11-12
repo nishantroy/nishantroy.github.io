@@ -28,13 +28,13 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
 ---
 <Base>
   <div class="mx-auto max-w-6xl px-5 sm:px-10 lg:grid lg:max-w-[84rem] lg:grid-cols-[8rem_minmax(0,72rem)] lg:justify-center lg:gap-x-12">
-    <aside class="hidden pt-[11.25rem] lg:block">
+    <aside class="hidden pt-[5.5rem] lg:block">
       <SectionNav variant="rail" />
     </aside>
     <div class="min-w-0">
     <Header />
     <main id="content">
-      <section class="pt-14 sm:pt-24" aria-label="Introduction">
+      <section class="pt-8 sm:pt-6" aria-label="Introduction">
         <div class="flex items-center gap-4">
           {hasHeadshot && <Avatar />}
           <p class="flex items-start gap-2.5 font-mono text-xs text-soft">
@@ -42,13 +42,13 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
             <span><span class="sm:hidden">Sr. Staff</span><span class="hidden sm:inline">{profile.roleTitle}</span> · AI Experiences, Pinterest</span>
           </p>
         </div>
-        <h1 class="mt-6 max-w-[22ch] text-balance font-serif text-[2.25rem] font-medium leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
+        <h1 class="mt-4 max-w-[24ch] text-balance font-serif text-[2.25rem] font-medium leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.25rem]">
           {before}{emphasis && <em class="font-normal text-accent">{emphasis}</em>}{after}
         </h1>
-        <div class="mt-8 flex max-w-[40rem] flex-col gap-4 text-pretty font-serif text-xl leading-normal text-soft sm:text-[1.375rem]">
+        <div class="mt-5 flex max-w-[46rem] flex-col gap-3 text-pretty font-serif text-lg leading-normal text-soft sm:text-[1.1875rem]">
           {profile.intro.map((p) => <p>{p}</p>)}
         </div>
-        <div class="mt-14 border-y border-rule">
+        <div class="mt-8 border-y border-rule">
           <dl class="grid sm:grid-cols-3">
             {profile.stats.map((s, i) => (
               <div class:list={['flex flex-col-reverse justify-end gap-1 py-5 sm:px-5 sm:first:pl-0', i > 0 && 'border-t border-rule sm:border-t-0 sm:border-l']}>

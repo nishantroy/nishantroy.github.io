@@ -10,7 +10,7 @@ const found = Object.values(
 const initials = profile.name.split(' ').map((p) => p[0]).join('');
 ---
 {found ? (
-  <Image src={found} alt={profile.name} width={112} height={112} class="size-14 rounded-full object-cover" loading="eager" />
+  <Image src={found} alt={profile.name} width={112} height={112} class="size-12 rounded-full object-cover" loading="eager" />
 ) : (
-  <span aria-hidden="true" class="inline-flex size-14 items-center justify-center rounded-full bg-accent font-serif text-xl text-paper">{initials}</span>
+  <span aria-hidden="true" class="inline-flex size-12 items-center justify-center rounded-full bg-accent font-serif text-xl text-paper">{initials}</span>
 )}
