@@ -9,6 +9,7 @@ status: Personal use
 tint: "#16242c"
 frame: tv
 repo: https://github.com/nishantroy/android-tv-tuneup
+icon: ../../assets/projects/android-tv/icon.png
 screenshot: ../../assets/projects/android-tv/home-sf.png
 screenshotAlt: "A custom Android TV home screen over a San Francisco sunset wallpaper with the Golden Gate Bridge: the time and weather, a carousel of streaming apps with Apple TV in focus, and a frosted Continue Watching row"
 ---

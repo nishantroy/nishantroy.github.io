@@ -8,6 +8,7 @@ platform: iPhone
 stack: [SwiftUI, Foundation Models, SwiftData]
 status: TestFlight
 repo: https://github.com/nishantroy/mise
+icon: ../../assets/projects/mise/icon.png
 screenshot: ../../assets/projects/mise/ingredient-check.png
 screenshotAlt: "Mise ingredient check for Shanghai-style braised pork belly: it asks whether you have rock sugar, and offers dry sherry from your pantry as the closest match for Shaoxing wine"
 ---

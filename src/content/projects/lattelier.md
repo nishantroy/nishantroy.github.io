@@ -8,6 +8,7 @@ platform: iPhone
 stack: [SwiftUI, Core Image, Foundation Models]
 status: TestFlight
 repo: https://github.com/nishantroy/latte-art-coach
+icon: ../../assets/projects/lattelier/icon.png
 screenshot: ../../assets/projects/lattelier/score.png
 screenshotAlt: "Lattelier score for a tulip: 75 out of 100, broken down into centering, symmetry, contrast, size, texture and stacks, with next-pour coaching from Apple Intelligence"
 ---

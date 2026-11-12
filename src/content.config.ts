@@ -43,6 +43,7 @@ const projects = defineCollection({
       repo: z.url().optional(),
       demo: z.url().optional(),
       screenshot: image(),
+      icon: image().optional(), // app icon shown beside the name
       frame: z.enum(['phone', 'browser', 'tv']).default('phone'),
       tint: z.string().optional(), // tile background, e.g. '#efe6d6'
       screenshotAlt: z.string(),

@@ -8,6 +8,7 @@ platform: iPhone
 stack: [SwiftUI, FamilyControls, DeviceActivity]
 status: TestFlight
 repo: https://github.com/nishantroy/lockbox
+icon: ../../assets/projects/lockbox/icon.png
 screenshot: ../../assets/projects/lockbox/1.webp
 screenshotAlt: "Phone Lockbox home: a Lock now button and tonight's bedtime lock from 10:30 PM to 7:00 AM"
 ---

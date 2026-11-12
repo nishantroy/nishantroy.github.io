@@ -9,6 +9,7 @@ stack: [TypeScript, React, Durable Objects]
 status: Live
 repo: https://github.com/nishantroy/poker
 frame: browser
+icon: ../../assets/projects/poker/icon.png
 screenshot: ../../assets/projects/poker/desktop-v3.png
 screenshotAlt: "Bink City on desktop mid-hand: the bet sizer open at three-quarters of the pot, HUD stats under each player, and a replay of the previous hand showing each player's equity by street"
 ---

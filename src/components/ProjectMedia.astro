@@ -12,9 +12,9 @@ const { src, alt, frame } = Astro.props;
     </div>
   </div>
 ) : frame === 'phone' ? (
-  <div class="absolute left-1/2 top-8 w-[46%] -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transform-none">
+  <div class="absolute left-1/2 top-6 w-[58%] -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transform-none">
     <div class="rounded-[2rem] bg-[#111] p-[5px] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)]">
-      <Image src={src} alt={alt} widths={[240, 360, 520]} sizes="(min-width: 1024px) 180px, (min-width: 640px) 22vw, 46vw" class="w-full rounded-[1.7rem] bg-black" />
+      <Image src={src} alt={alt} widths={[300, 450, 660]} sizes="(min-width: 1024px) 220px, (min-width: 640px) 28vw, 58vw" class="w-full rounded-[1.7rem] bg-black" />
     </div>
   </div>
 ) : (
