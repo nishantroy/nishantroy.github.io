@@ -34,7 +34,7 @@ export const profile: Profile = {
   positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
     "I redesigned Pinterest's highest-traffic recommendation system twice, paving the way for an ad business that grew from under $1B to over $4B a year. Then I led the teams that built new ad formats on top of it, from visual search ads to AI-generated creative. Now I'm back to writing code, building AI experiences at Pinterest.",
-    'Outside work, I build things I find useful and share them with friends and family.',
+    'I grew up in Delhi, Russia and Ghana, studied in Atlanta, and have lived in San Francisco for almost a decade. Outside work: tennis, espresso, cooking, and small apps for friends and family.',
   ],
   email: 'roynishant96@gmail.com',
   location: 'San Francisco',
@@ -57,11 +57,11 @@ export const profile: Profile = {
     { value: '10+', label: 'public product launches' },
     { value: '5+ yrs', label: 'leading engineering teams' },
   ],
-  spokenAt: { names: ['SREcon', 'AWS', 'NASA', 'Snap', 'Figma', 'DoorDash', 'Shopify'], more: '15+' },
+  spokenAt: { names: ['SREcon', 'AWS', 'NASA', 'Snap', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures'], more: '10+' },
   angel: 'I also make small angel investments in early-stage startups.',
   companyTalks: {
     count: 14,
-    highlights: ['AWS', 'Snap', 'NASA', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures', 'GGV Capital'],
+    highlights: ['AWS', 'Snap', 'NASA', 'Figma', 'DoorDash', 'Shopify', 'Etsy', 'Bain Capital Ventures'],
   },
   reviews: [
     { title: 'Distributed Services with Go', href: 'https://pragprog.com/titles/tjgo/distributed-services-with-go/', publisher: 'Pragmatic Bookshelf' },

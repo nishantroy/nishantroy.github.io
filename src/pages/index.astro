@@ -48,7 +48,7 @@ const [before, after] = emphasis ? profile.positioning.split(emphasis) : [profil
         <div class="mt-5 flex max-w-[46rem] flex-col gap-3 text-pretty font-serif text-lg leading-normal text-soft sm:text-[1.1875rem]">
           {profile.intro.map((p) => <p>{p}</p>)}
         </div>
-        <div class="mt-8 border-y border-rule">
+        <div class="mt-7 border-y border-rule">
           <dl class="grid sm:grid-cols-3">
             {profile.stats.map((s, i) => (
               <div class:list={['flex flex-col-reverse justify-end gap-1 py-5 sm:px-5 sm:first:pl-0', i > 0 && 'border-t border-rule sm:border-t-0 sm:border-l']}>
