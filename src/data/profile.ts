@@ -33,7 +33,7 @@ export const profile: Profile = {
   roleOrg: 'AI Experiences · Pinterest',
   positioning: 'I rebuilt how Pinterest serves ads, then led the ad products that run on it.',
   intro: [
-    "I redesigned Pinterest's highest-traffic recommendation system twice, paving the way for an ad business that grew from under $1B to over $4B a year. Then I led the teams that built new ad formats on top of it, from visual search ads to AI-generated creative.",
+    "I redesigned Pinterest's highest-traffic recommendation system twice, paving the way for an ad business that grew from under $1B to over $4B a year. Then I led the teams that built new ad formats on top of it, from visual search ads to AI-generated creative. Now I'm back to writing code, building AI experiences at Pinterest.",
     'Outside work, I build things I find useful and share them with friends and family.',
   ],
   email: 'roynishant96@gmail.com',
